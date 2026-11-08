@@ -208,7 +208,12 @@ const TH=[
  <li><b>Domain (what can go in):</b> every number except $x=5$, because $x=5$ would mean dividing by zero.</li>
  <li><b>Range (what can come out):</b> as $x$ gets very large (positive or negative), $f(x)$ gets close to $\frac{-2}{1}=-2$. So the graph has a flat line it never touches at $y=-2$ (a horizontal asymptote).</li>
 </ul>
-<p>Split the fraction: $\frac{3-2x}{x-5}=\frac{-2(x-5)-7}{x-5}=-2-\frac{7}{x-5}$. The fraction $\frac{7}{x-5}$ can never be zero, so $f(x)$ can never equal $-2$.</p>
+<p><b>Quick method for the range:</b> divide every term, on the top and the bottom, by $x$.</p>
+$$f(x)=\frac{\frac{3}{x}-2}{1-\frac{5}{x}}$$
+<p>Now let $x$ get very large (positive or negative). The parts $\frac{3}{x}$ and $\frac{5}{x}$ get closer and closer to $0$, so</p>
+$$f(x)\to\frac{0-2}{1-0}=-2$$
+<p>So the graph levels off at $y=-2$, and the range is $f(x)\neq -2$.</p>
+<p><b>Shortcut:</b> take the number in front of $x$ on the top and divide it by the number in front of $x$ on the bottom: $\frac{-2}{1}=-2$.</p>
 ${svgGraph({x0:-4,x1:14,y0:-12,y1:10,st:2,label:'Graph of f(x) with asymptotes at y=-2 and x=5',lines:[{x1:-4,y1:-2,x2:14,y2:-2,c:'#c2410c',d:1},{x1:5,y1:-12,x2:5,y2:10,c:'#64748b',d:1}],curves:[{f:x=>(3-2*x)/(x-5)}],texts:[{x:8,y:-0.9,t:'y = −2 (never reached)',c:'#c2410c'},{x:5.3,y:8.5,t:'x ≠ 5',c:'#64748b'}]})}`,''],
 
 ['inverse','Finding the Inverse Function f⁻¹(x)',String.raw`<p>The inverse function undoes $f$. To find $f^{-1}(x)$, follow three steps:</p>
@@ -240,8 +245,8 @@ ${fig3({tri:1})}`,'Change the centre or radius and watch the right-angled triang
 
 const TEX={
 rational:[{q:String.raw`Write down the range of $h(x) = \frac{4-3x}{x-2}$.`,s:[
- ['Step 1: Where does it level off?',String.raw`As $x$ gets very large, $h(x)$ gets close to $\frac{-3}{1}=-3$.`],
- ['Step 2: Check by splitting the fraction',String.raw`$h(x) = \frac{-3(x-2)-2}{x-2} = -3 - \frac{2}{x-2}$, and $\frac{2}{x-2}$ is never zero, so $h(x) \neq -3$.`],
+ ['Step 1: Divide every term by x',String.raw`$h(x)=\frac{\frac{4}{x}-3}{1-\frac{2}{x}}$.`],
+ ['Step 2: Let x get very large',String.raw`$\frac{4}{x}$ and $\frac{2}{x}$ get close to $0$, so $h(x)$ gets close to $\frac{-3}{1}=-3$.`],
  ['Step 3: State the range',String.raw`Range: $h(x)\in\mathbb{R}, h(x)\neq -3$.`]]}],
 inverse:[{q:String.raw`Find the inverse of $g(x) = \frac{2x+1}{x-4}$.`,s:[
  ['Step 1: Write y = g(x)',String.raw`$y = \frac{2x+1}{x-4}$.`],
@@ -273,8 +278,8 @@ const EX=[
 {t:'Question 8 Walkthrough: Functions',m:9,q:String.raw`The function $f$ is defined by $f:x\to\dfrac{3-2x}{x-5}$, $x\in\mathbb{R}, x\neq 5$.<br>(a) Write down the range of $f$. [1 mark]<br>(b) Find $f^{-1}(x)$. [3 marks]<br>The function $g$ has domain $-1\le x\le 8$, and is linear from $(-1,-9)$ to $(2,0)$ and from $(2,0)$ to $(8,4)$.<br>Figure 4 shows a sketch of the graph of $y=g(x)$.${fig4()}(c) Write down the range of $g$. [1 mark]<br>(d) Find $gg(2)$. [2 marks]<br>(e) Find $fg(8)$. [2 marks]`,
  s:[
  ['Reading the notation',String.raw`$f:x\to\frac{3-2x}{x-5}$ means $f(x)=\frac{3-2x}{x-5}$. The rule $x\ne5$ stops us dividing by zero.`],
- ['Hint for part (a)',String.raw`As $x$ gets very large, what number does $f(x)$ get close to but never reach? Try splitting the fraction into a number plus a smaller fraction.`],
- ['Part (a) working',String.raw`$\frac{3-2x}{x-5}=-2-\frac{7}{x-5}$. Since $\frac{7}{x-5}$ is never $0$, $f(x)\ne -2$.<br><b>Range:</b> $f(x)\in\mathbb{R}, f(x)\ne -2$.`],
+ ['Hint for part (a)',String.raw`Divide every term on the top and bottom by $x$. Then let $x$ get very large: which parts shrink to $0$?`],
+ ['Part (a) working',String.raw`Divide every term by $x$: $f(x)=\frac{\frac{3}{x}-2}{1-\frac{5}{x}}$. As $x$ gets very large, $\frac{3}{x}$ and $\frac{5}{x}$ get close to $0$, so $f(x)$ gets close to $\frac{-2}{1}=-2$.<br><b>Range:</b> $f(x)\in\mathbb{R}, f(x)\ne -2$.`],
  ['Hint for part (b)',String.raw`Write $y=\frac{3-2x}{x-5}$, multiply both sides by $(x-5)$, gather the $x$ terms on one side, then take $x$ out as a common factor.`],
  ['Part (b) working',String.raw`$y(x-5)=3-2x \implies yx-5y=3-2x \implies yx+2x=5y+3 \implies x(y+2)=5y+3 \implies x=\frac{5y+3}{y+2}$.<br><b>Answer:</b> $f^{-1}(x)=\frac{5x+3}{x+2}, x\ne -2$.`],
  ['Hint for part (c)',String.raw`The range is every height (output) the graph reaches, from the lowest point to the highest point.`],
@@ -327,8 +332,8 @@ GEN.t1.push(()=>{const a=pick([2,3,4,5]),b=pick([-5,-3,-2,2,3,4,7]);
  steps:[String.raw`Let $y=${lin(a,b)} \implies y${sg(-b)}=${a}x \implies x=\frac{y${sg(-b)}}{${a}}$.`,String.raw`Swap $y$ for $x$: $f^{-1}(x)=\frac{x${sg(-b)}}{${a}}$.`]}});
 
 GEN.t2.push(()=>{const a=pick([-3,-2,-1,2,3,4]),b=pick([1,2,3,5,7]),c=pick([1,2,3,4,5,6]);if(b+a*c===0)return GEN.t2[0]();
- return{tp:'range',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x${sg(-c)}}$, $x\ne${c}$. Find the one number that $f(x)$ can never equal (the value missing from the range).`,ans:[a],at:String(a),hint:'Split the fraction into a number plus a fraction that can never be zero.',
- steps:[String.raw`Rewrite $f(x)=${a}+\frac{${b+a*c}}{x${sg(-c)}}$.`,String.raw`The fraction is never zero, so $f(x)\ne${a}$.`]}});
+ return{tp:'range',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x${sg(-c)}}$, $x\ne${c}$. Find the one number that $f(x)$ can never equal (the value missing from the range).`,ans:[a],at:String(a),hint:'Divide every term by x, then let x get very large. Which parts shrink to 0?',
+ steps:[String.raw`Divide every term by $x$: $f(x)=\frac{${a}+\frac{${b}}{x}}{1-\frac{${c}}{x}}$.`,String.raw`As $x$ gets very large, $\frac{${b}}{x}$ and $\frac{${c}}{x}$ get close to $0$, so $f(x)$ gets close to $\frac{${a}}{1}=${a}$. So $f(x)\ne${a}$.`]}});
 
 GEN.t2.push(()=>{const a=pick([-3,-2,-1,2,3]),b=pick([1,2,3,4,5]),c=pick([1,2,3,4,5,6]);if(b+a*c===0)return GEN.t2[1]();
  return{tp:'inv',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x${sg(-c)}}$. Find $f^{-1}(x)$. Type it like (5x+3)/(x+2).`,fn:x=>(c*x+b)/(x-a),at:String.raw`\frac{${lin(c,b)}}{x${sg(-a)}}`,hint:'Write y =, multiply both sides by the bottom, gather the x terms, then take x out as a common factor.',
