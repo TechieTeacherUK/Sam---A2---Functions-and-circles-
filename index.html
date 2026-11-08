@@ -216,14 +216,15 @@ $$f(x)\to\frac{0-2}{1-0}=-2$$
 <p><b>Shortcut:</b> take the number in front of $x$ on the top and divide it by the number in front of $x$ on the bottom: $\frac{-2}{1}=-2$.</p>
 ${svgGraph({x0:-4,x1:14,y0:-12,y1:10,st:2,label:'Graph of f(x) with asymptotes at y=-2 and x=5',lines:[{x1:-4,y1:-2,x2:14,y2:-2,c:'#c2410c',d:1},{x1:5,y1:-12,x2:5,y2:10,c:'#64748b',d:1}],curves:[{f:x=>(3-2*x)/(x-5)}],texts:[{x:8,y:-0.9,t:'y = −2 (never reached)',c:'#c2410c'},{x:5.3,y:8.5,t:'x ≠ 5',c:'#64748b'}]})}`,''],
 
-['inverse','Finding the Inverse Function f⁻¹(x)',String.raw`<p>The inverse function undoes $f$. To find $f^{-1}(x)$, follow three steps:</p>
+['inverse','Finding the Inverse Function f⁻¹(x)',String.raw`<p>The inverse function undoes $f$. To find $f^{-1}(x)$, follow these steps:</p>
 <ol class="list-decimal ml-5 space-y-1">
  <li>Write $y=f(x)$, e.g. $y = \frac{3-2x}{x-5}$.</li>
- <li>Rearrange to get $x$ on its own:
-    $$y(x-5) = 3-2x \implies yx - 5y = 3 - 2x$$
-    Gather the $x$ terms on one side: $yx + 2x = 5y + 3 \implies x(y+2) = 5y+3 \implies x = \frac{5y+3}{y+2}$.
+ <li><b>Swap $x$ and $y$:</b> $x = \frac{3-2y}{y-5}$.</li>
+ <li>Rearrange to make $y$ the subject again:
+    $$x(y-5) = 3-2y \implies xy - 5x = 3 - 2y$$
+    Gather the $y$ terms on one side: $xy + 2y = 5x + 3 \implies y(x+2) = 5x+3 \implies y = \frac{5x+3}{x+2}$.
  </li>
- <li>Swap $y$ for $x$: $f^{-1}(x) = \frac{5x+3}{x+2}$.</li>
+ <li>This new $y=\dots$ is the inverse: $f^{-1}(x) = \frac{5x+3}{x+2}$.</li>
 </ol>
 <p><b>Key link:</b> what can go into $f^{-1}$ is what came out of $f$. So $f^{-1}$ has $x \neq -2$.</p>`,''],
 
@@ -250,8 +251,8 @@ rational:[{q:String.raw`Write down the range of $h(x) = \frac{4-3x}{x-2}$.`,s:[
  ['Step 3: State the range',String.raw`Range: $h(x)\in\mathbb{R}, h(x)\neq -3$.`]]}],
 inverse:[{q:String.raw`Find the inverse of $g(x) = \frac{2x+1}{x-4}$.`,s:[
  ['Step 1: Write y = g(x)',String.raw`$y = \frac{2x+1}{x-4}$.`],
- ['Step 2: Rearrange',String.raw`$y(x-4) = 2x+1 \implies xy - 4y = 2x + 1 \implies xy - 2x = 4y + 1$.`],
- ['Step 3: Take x out as a common factor, then divide',String.raw`$x(y-2) = 4y + 1 \implies x = \frac{4y+1}{y-2}$.`],
+ ['Step 2: Swap x and y',String.raw`$x = \frac{2y+1}{y-4}$.`],
+ ['Step 3: Make y the subject',String.raw`$x(y-4) = 2y+1 \implies xy - 4x = 2y + 1 \implies xy - 2y = 4x + 1$. Take $y$ out as a common factor: $y(x-2) = 4x+1 \implies y = \frac{4x+1}{x-2}$.`],
  ['Step 4: Give the answer',String.raw`$g^{-1}(x) = \frac{4x+1}{x-2}$.`]]}],
 piecewise:[{q:String.raw`Find $g(g(2))$ where $g(x)$ is a straight line from $(-1,-9)$ to $(2,0)$.`,s:[
  ['Step 1: Read g(2)',String.raw`The point $(2,0)$ is on the graph, so $g(2)=0$.`],
@@ -280,8 +281,8 @@ const EX=[
  ['Reading the notation',String.raw`$f:x\to\frac{3-2x}{x-5}$ means $f(x)=\frac{3-2x}{x-5}$. The rule $x\ne5$ stops us dividing by zero.`],
  ['Hint for part (a)',String.raw`Divide every term on the top and bottom by $x$. Then let $x$ get very large: which parts shrink to $0$?`],
  ['Part (a) working',String.raw`Divide every term by $x$: $f(x)=\frac{\frac{3}{x}-2}{1-\frac{5}{x}}$. As $x$ gets very large, $\frac{3}{x}$ and $\frac{5}{x}$ get close to $0$, so $f(x)$ gets close to $\frac{-2}{1}=-2$.<br><b>Range:</b> $f(x)\in\mathbb{R}, f(x)\ne -2$.`],
- ['Hint for part (b)',String.raw`Write $y=\frac{3-2x}{x-5}$, multiply both sides by $(x-5)$, gather the $x$ terms on one side, then take $x$ out as a common factor.`],
- ['Part (b) working',String.raw`$y(x-5)=3-2x \implies yx-5y=3-2x \implies yx+2x=5y+3 \implies x(y+2)=5y+3 \implies x=\frac{5y+3}{y+2}$.<br><b>Answer:</b> $f^{-1}(x)=\frac{5x+3}{x+2}, x\ne -2$.`],
+ ['Hint for part (b)',String.raw`Write $y=\frac{3-2x}{x-5}$, then swap $x$ and $y$. Now rearrange to make $y$ the subject: multiply by the bottom, gather the $y$ terms on one side, then take $y$ out as a common factor.`],
+ ['Part (b) working',String.raw`Write $y=\frac{3-2x}{x-5}$ and swap $x$ and $y$: $x=\frac{3-2y}{y-5}$.<br>Rearrange to make $y$ the subject: $x(y-5)=3-2y \implies xy-5x=3-2y \implies xy+2y=5x+3 \implies y(x+2)=5x+3 \implies y=\frac{5x+3}{x+2}$.<br><b>Answer:</b> $f^{-1}(x)=\frac{5x+3}{x+2}, x\ne -2$.`],
  ['Hint for part (c)',String.raw`The range is every height (output) the graph reaches, from the lowest point to the highest point.`],
  ['Part (c) working',String.raw`Lowest point is $(-1,-9)$ and highest point is $(8,4)$.<br><b>Range:</b> $-9\le g(x)\le 4$.${fig4({rng:1})}`],
  ['Hint for part (d)',String.raw`$gg(2)$ means $g(g(2))$. Work out the inside $g(2)$ first, then put that answer into $g$ again.`],
@@ -328,16 +329,16 @@ GEN.t1.push(()=>{const a=pick([2,3,4]),b=pick([-3,-1,1,2,5]),c=pick([-2,-1,1,3])
  steps:[String.raw`Work out $g(${x0})=${x0*x0+c}$.`,String.raw`Put that into $f$: $f(${x0*x0+c})=${a}\times(${x0*x0+c})${sg(b)}=${v}$.`]}});
 
 GEN.t1.push(()=>{const a=pick([2,3,4,5]),b=pick([-5,-3,-2,2,3,4,7]);
- return{tp:'inv',q:String.raw`$f(x)=${lin(a,b)}$. Find $f^{-1}(x)$. Type it as (x-b)/a with your own numbers.`,fn:x=>(x-b)/a,at:String.raw`\frac{x${sg(-b)}}{${a}}`,hint:'Write y = the expression, then get x on its own. Finally swap y for x.',
- steps:[String.raw`Let $y=${lin(a,b)} \implies y${sg(-b)}=${a}x \implies x=\frac{y${sg(-b)}}{${a}}$.`,String.raw`Swap $y$ for $x$: $f^{-1}(x)=\frac{x${sg(-b)}}{${a}}$.`]}});
+ return{tp:'inv',q:String.raw`$f(x)=${lin(a,b)}$. Find $f^{-1}(x)$. Type it as (x-b)/a with your own numbers.`,fn:x=>(x-b)/a,at:String.raw`\frac{x${sg(-b)}}{${a}}`,hint:'Write y = the expression, swap x and y, then rearrange to make y the subject.',
+ steps:[String.raw`Write $y=${lin(a,b)}$, then swap $x$ and $y$: $x=${a}y${sg(b)}$.`,String.raw`Make $y$ the subject: $x${sg(-b)}=${a}y \implies y=\frac{x${sg(-b)}}{${a}}$, so $f^{-1}(x)=\frac{x${sg(-b)}}{${a}}$.`]}});
 
 GEN.t2.push(()=>{const a=pick([-3,-2,-1,2,3,4]),b=pick([1,2,3,5,7]),c=pick([1,2,3,4,5,6]);if(b+a*c===0)return GEN.t2[0]();
  return{tp:'range',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x${sg(-c)}}$, $x\ne${c}$. Find the one number that $f(x)$ can never equal (the value missing from the range).`,ans:[a],at:String(a),hint:'Divide every term by x, then let x get very large. Which parts shrink to 0?',
  steps:[String.raw`Divide every term by $x$: $f(x)=\frac{${a}+\frac{${b}}{x}}{1-\frac{${c}}{x}}$.`,String.raw`As $x$ gets very large, $\frac{${b}}{x}$ and $\frac{${c}}{x}$ get close to $0$, so $f(x)$ gets close to $\frac{${a}}{1}=${a}$. So $f(x)\ne${a}$.`]}});
 
 GEN.t2.push(()=>{const a=pick([-3,-2,-1,2,3]),b=pick([1,2,3,4,5]),c=pick([1,2,3,4,5,6]);if(b+a*c===0)return GEN.t2[1]();
- return{tp:'inv',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x${sg(-c)}}$. Find $f^{-1}(x)$. Type it like (5x+3)/(x+2).`,fn:x=>(c*x+b)/(x-a),at:String.raw`\frac{${lin(c,b)}}{x${sg(-a)}}`,hint:'Write y =, multiply both sides by the bottom, gather the x terms, then take x out as a common factor.',
- steps:[String.raw`$y(x${sg(-c)})=${lin(a,b)} \implies xy${sg(-c)}y=${lin(a,b)}$.`,String.raw`Gather the $x$ terms: $x(y${sg(-a)})=${c}y${sg(b)} \implies x=\frac{${lin(c,b)}}{y${sg(-a)}}$.`]}});
+ return{tp:'inv',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x${sg(-c)}}$. Find $f^{-1}(x)$. Type it like (5x+3)/(x+2).`,fn:x=>(c*x+b)/(x-a),at:String.raw`\frac{${lin(c,b)}}{x${sg(-a)}}`,hint:'Write y =, swap x and y, multiply by the bottom, gather the y terms, then take y out as a common factor.',
+ steps:[String.raw`Write $y=\frac{${lin(a,b)}}{x${sg(-c)}}$, then swap $x$ and $y$: $x=\frac{${lin(a,b).replace(/x/g,'y')}}{y${sg(-c)}}$.`,String.raw`Multiply by the bottom: $x(y${sg(-c)})=${lin(a,b).replace(/x/g,'y')} \implies xy${sg(-c)}x=${lin(a,b).replace(/x/g,'y')}$.`,String.raw`Gather the $y$ terms: $xy${sg(-a)}y=${c}x${sg(b)} \implies y(x${sg(-a)})=${c}x${sg(b)} \implies y=\frac{${lin(c,b)}}{x${sg(-a)}}$.`]}});
 
 GEN.t3.push(()=>{const k=pick([2,3,4]),yr=pick([2,4,6]),f=x=>(3-2*x)/(x-5),a=-2*k,b=f(yr);
  return{tp:'comp',q:String.raw`$f(x)=\dfrac{3-2x}{x-5}$. The graph of $g(x)$ (for $-1\le x\le8$) is made of two straight pieces.`,qgr:gGraph(k,yr),hint:'Work out the inside bracket first, reading values off the graph.',parts:[
