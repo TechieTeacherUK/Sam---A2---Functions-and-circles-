@@ -132,8 +132,60 @@ const cvs=w=>$('#cv-'+w);
 const PI=Math.PI;
 const O=s=>String.raw`\textcolor{#4338ca}{${s}}`,I=s=>String.raw`\textcolor{#c2410c}{${s}}`;
 const KEY=String.raw`<p class="mt-2 text-sm"><b>Colour key:</b> the <span class="out">outer function</span> (done last) is indigo and the <span class="inn">inner function</span> (done first) is orange.</p>`;
-const W={},PRED={},PD={};
-const wb=()=>'';
+
+let svgN=0;
+const svgOpen=(w,h,label)=>{svgN++;return `<svg viewBox="0 0 ${w} ${h}" class="w-full my-2" style="max-width:${w}px;color:inherit" role="img" aria-label="${label}"><defs><marker id="ah${svgN}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>`};
+const stx=(x,y,t,o={})=>`<text x="${x}" y="${y}" text-anchor="${o.a||'middle'}" font-size="${o.s||15}" fill="${o.c||'currentColor'}" font-family="system-ui,sans-serif"${o.i?' font-style="italic"':''}${o.b?' font-weight="700"':''}>${t}</text>`;
+const sln=(x1,y1,x2,y2,o={})=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${o.c||'currentColor'}" stroke-width="${o.w||1.5}"${o.d?' stroke-dasharray="5 4"':''}${o.ar?` marker-end="url(#ah${svgN})"`:''}${o.op?` stroke-opacity="${o.op}"`:''}/>`;
+/* Figure 4 as printed in the exam paper (a sketch: not to scale) */
+function fig4(o={}){const sx=30,sy=19,X=x=>70+(x+2)*sx,Y=y=>28+(6-y)*sy;
+ let s=svgOpen(480,385,'Figure 4: graph of y equals g of x, straight from (-1, -9) to (2, 0) then to (8, 4)');
+ s+=sln(X(-2.3),Y(0),X(10.3),Y(0),{ar:1})+sln(X(0),Y(-10.4),X(0),Y(5.3),{ar:1});
+ s+=sln(X(0),Y(4),X(8),Y(4),{d:1,op:.8,w:1.2})+sln(X(8),Y(4),X(8),Y(0),{d:1,op:.8,w:1.2})+sln(X(-1),Y(0),X(-1),Y(-9),{d:1,op:.8,w:1.2})+sln(X(-1),Y(-9),X(0),Y(-9),{d:1,op:.8,w:1.2});
+ if(o.dom)s+=sln(X(-1),Y(0),X(8),Y(0),{c:'#c2410c',w:6,op:.55})+stx(X(2.6),Y(0)+36,'domain: −1 ≤ x ≤ 8 (orange bar)',{c:'#c2410c',b:1,s:14,a:'start'});
+ if(o.rng)s+=sln(X(0),Y(-9),X(0),Y(4),{c:'#4338ca',w:6,op:.55})+stx(X(2.6),Y(-4),'range: −9 ≤ g(x) ≤ 4 (indigo bar)',{c:'#4338ca',b:1,s:14,a:'start'});
+ s+=`<polyline points="${X(-1)},${Y(-9)} ${X(2)},${Y(0)} ${X(8)},${Y(4)}" fill="none" stroke="currentColor" stroke-width="3.2"/>`;
+ if(o.ex)s+=o.ex(X,Y);
+ s+=stx(X(0)-10,Y(4)+5,'4',{a:'end'})+stx(X(-1)-6,Y(0)+19,'−1',{a:'end'})+stx(X(0)-8,Y(0)+19,'O',{a:'end',i:1})+stx(X(2)+12,Y(0)+19,'2')+stx(X(8),Y(0)+19,'8')+stx(X(10.4),Y(0)+5,'x',{a:'start',i:1})+stx(X(0)-14,Y(5.3)+4,'y',{a:'end',i:1})+stx(X(0)+8,Y(-6)+5,'−6',{a:'start'})+stx(X(0)+8,Y(-9)+5,'−9',{a:'start'});
+ return s+stx(240,372,'Figure 4',{b:1})+'</svg>'}
+/* Figure 3 as printed in the exam paper (O at the origin, centre Q(11, 5√3), radius 4, OT = 6√5) */
+function fig3(o={}){const p=11,k=5*Math.sqrt(3),r=4,sc=25,X=x=>40+x*sc,Y=y=>368-y*sc,d=Math.hypot(p,k),th=Math.atan2(k,p)+Math.asin(r/d),ot=Math.sqrt(d*d-r*r),T=[ot*Math.cos(th),ot*Math.sin(th)];
+ const Tp=[X(T[0]),Y(T[1])],Qp=[X(p),Y(k)],Op=[X(0),Y(0)],nrm=(a,b)=>{const l=Math.hypot(a,b);return[a/l,b/l]},u=nrm(Op[0]-Tp[0],Op[1]-Tp[1]),w=nrm(Qp[0]-Tp[0],Qp[1]-Tp[1]),q=13;
+ let s=svgOpen(480,415,'Figure 3: a circle with centre Q and radius 4, and a tangent from the origin O touching the circle at T, with OT equal to 6 root 5');
+ if(o.tri)s+=`<polygon points="${Op} ${Tp} ${Qp}" fill="#4338ca" fill-opacity=".10" stroke="none"/>`;
+ s+=sln(X(-1),Y(0),X(16),Y(0),{ar:1})+sln(X(0),Y(-.8),X(0),Y(14),{ar:1})+`<circle cx="${Qp[0]}" cy="${Qp[1]}" r="${r*sc}" fill="none" stroke="currentColor" stroke-width="2"/>`;
+ s+=sln(Op[0],Op[1],Tp[0]+(Tp[0]-Op[0])*.2,Tp[1]+(Tp[1]-Op[1])*.2,{w:2.2})+sln(Op[0],Op[1],Qp[0],Qp[1],{d:1,op:.8,w:1.3})+sln(Tp[0],Tp[1],Qp[0],Qp[1],{w:2});
+ s+=`<polyline points="${Tp[0]+u[0]*q},${Tp[1]+u[1]*q} ${Tp[0]+(u[0]+w[0])*q},${Tp[1]+(u[1]+w[1])*q} ${Tp[0]+w[0]*q},${Tp[1]+w[1]*q}" fill="none" stroke="currentColor" stroke-width="1.5"/>`;
+ s+=`<circle cx="${Qp[0]}" cy="${Qp[1]}" r="3.5" fill="currentColor"/>`+stx(Op[0]-14,Op[1]+17,'O',{i:1})+stx(X(16.2),Y(0)+5,'x',{a:'start',i:1})+stx(X(0)-12,Y(14)+4,'y',{a:'end',i:1})+stx(Tp[0]-14,Tp[1]-6,'T',{i:1})+stx(Qp[0]+8,Qp[1]+18,'Q',{i:1})+stx(Qp[0]+r*sc*.72+10,Qp[1]+r*sc*.72+8,'C',{i:1})+stx((Op[0]+Tp[0])/2-26,(Op[1]+Tp[1])/2-4,'6√5',{b:1,c:'#c2410c',a:'end'})+stx((Tp[0]+Qp[0])/2+9,(Tp[1]+Qp[1])/2-5,'4',{b:1,c:'#4338ca',a:'start'});
+ if(o.tri)s+=stx((Op[0]+Qp[0])/2+14,(Op[1]+Qp[1])/2+22,'OQ = ?',{b:1,s:14,a:'middle'})+stx(Tp[0]+30,Tp[1]+26,'90°',{b:1,s:13,a:'start'});
+ return s+stx(240,403,'Figure 3',{b:1})+'</svg>'}
+/* general graph drawn as SVG */
+function svgGraph(o){const w=o.w||460,h=o.h||300,m=34,{x0,x1,y0,y1}=o,sx=(w-2*m)/(x1-x0),sy=(h-2*m)/(y1-y0),X=x=>m+(x-x0)*sx,Y=y=>h-m-(y-y0)*sy,st=o.st||1;
+ let s=svgOpen(w,h,o.label||'Graph');
+ for(let i=Math.ceil(x0/st)*st;i<=x1;i+=st){s+=sln(X(i),Y(y0),X(i),Y(y1),{op:i?.13:.8,w:1});if(i)s+=stx(X(i),Y(0)+14,i,{s:11,c:'currentColor'})}
+ for(let j=Math.ceil(y0/st)*st;j<=y1;j+=st){s+=sln(X(x0),Y(j),X(x1),Y(j),{op:j?.13:.8,w:1});if(j)s+=stx(X(0)-5,Y(j)+4,j,{s:11,a:'end'})}
+ (o.lines||[]).forEach(l=>{s+=sln(X(l.x1),Y(l.y1),X(l.x2),Y(l.y2),{c:l.c,d:l.d,w:l.w||1.8})});
+ (o.curves||[]).forEach(c=>{let d='',on=false,pv=null;for(let i=0;i<=500;i++){const x=x0+(x1-x0)*i/500,y=c.f(x);if(!isFinite(y)||y<y0||y>y1||(pv!==null&&Math.abs(y-pv)>(y1-y0)*.8)){on=false;pv=isFinite(y)?y:null;continue}d+=(on?'L':'M')+X(x).toFixed(1)+' '+Y(y).toFixed(1);on=true;pv=y}
+  s+=`<path d="${d}" fill="none" stroke="${c.c||'#4338ca'}" stroke-width="2.6"/>`});
+ (o.pts||[]).forEach(p=>{s+=`<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="4.5" fill="${p.c||'currentColor'}"/>`+stx(X(p[0])+(p.dx||8),Y(p[1])+(p.dy||-8),p.l||'',{a:'start',s:13,c:p.c||'currentColor',b:1})});
+ (o.texts||[]).forEach(t=>{s+=stx(X(t.x),Y(t.y),t.t,{c:t.c,a:t.a||'start',s:13,b:1})});
+ return s+'</svg>'}
+const RING=(a,b,r,c,wd)=>{const o=[];for(let i=0;i<120;i++){const t1=2*Math.PI*i/120,t2=2*Math.PI*(i+1)/120;o.push({x1:a+r*Math.cos(t1),y1:b+r*Math.sin(t1),x2:a+r*Math.cos(t2),y2:b+r*Math.sin(t2),c,w:wd||2.4})}return o};
+const shn=(v,n)=>v===0?n:`(${n}${v>0?'-'+N(v):'+'+N(-v)})`;
+const W={circ:{ctl:R('ca','Centre x-coordinate a =',-4,16,.5,11)+R('cb','Centre y-coordinate b =',-4,14,.5,8.5)+R('cr','Radius r =',1,8,.5,4)+'<p class="text-sm text-slate-600">Orange: tangents from the origin $O$. Each one touches the circle at a point $T$ and meets the radius at a right angle.</p>',
+ draw(){const a=val('ca'),b=val('cb'),r=val('cr'),d=Math.hypot(a,b),segs=RING(a,b,r,'#4338ca'),pts=[P(a,b,'Q',  '#4338ca'),P(0,0,'O')],ext=[[a-r,b],[a+r,b],[a,b-r],[a,b+r],[0,0]];
+  segs.push({x1:a,y1:b,x2:a+r,y2:b,c:'#64748b',w:1.6,d:1});
+  let msg='';
+  if(d>r+1e-9){const al=Math.atan2(b,a),ph=Math.asin(r/d),ot=Math.sqrt(d*d-r*r);
+   [1,-1].forEach((sg1,i)=>{const th=al+sg1*ph,T=[ot*Math.cos(th),ot*Math.sin(th)];ext.push(T);segs.push({x1:0,y1:0,x2:T[0]*1.12,y2:T[1]*1.12,c:'#ea580c',w:2.5},{x1:a,y1:b,x2:T[0],y2:T[1],c:'#0f172a',w:1.8});pts.push(P(T[0],T[1],i?'T′':'T','#c2410c'));
+    const u=[-T[0],-T[1]],ul=Math.hypot(...u),v=[a-T[0],b-T[1]],vl=Math.hypot(...v),s=.16*Math.max(r,2);const A=[T[0]+u[0]/ul*s,T[1]+u[1]/ul*s],B=[T[0]+v[0]/vl*s,T[1]+v[1]/vl*s],C=[A[0]+B[0]-T[0],A[1]+B[1]-T[1]];
+    segs.push({x1:A[0],y1:A[1],x2:C[0],y2:C[1],c:'#0f172a',w:1.3},{x1:C[0],y1:C[1],x2:B[0],y2:B[1],c:'#0f172a',w:1.3})});
+   msg=String.raw`<b>Right-angled triangle $OTQ$ (right angle at $T$):</b><br>$OQ^2=a^2+b^2=${N(a*a)}+${N(b*b)}=${N(d*d)}$<br>$OT^2=OQ^2-r^2=${N(d*d)}-${N(r*r)}=${N(d*d-r*r)}$, so $OT\approx${N(ot)}$.`}
+  else msg='The origin is <b>inside</b> or on the circle, so there is no tangent from $O$. Move the centre away or make the radius smaller.';
+  plot(cvs('circ'),[],{fit:fit([],ext),segs,pts});
+  out('circ',String.raw`<b>Equation:</b> $${shn(a,'x')}^2+${shn(b,'y')}^2=${N(r*r)}$<br><b>Centre</b> $Q(${N(a)},${N(b)})$, <b>radius</b> $${N(r)}$.<br>${msg}`)}}};
+const wb=(id,tt)=>`<div data-wid="${id}" class="grid md:grid-cols-2 gap-4 mt-4"><div class="ui space-y-3">${tt?`<p class="text-sm font-semibold text-indigo-900">Try it: <span class="font-normal text-slate-700">${tt}</span></p>`:''}<div class="pctl space-y-3">${W[id].ctl}</div></div><div><canvas id="cv-${id}"></canvas><div id="ro-${id}" aria-live="polite" class="ui text-sm mt-3 leading-relaxed bg-slate-50 border border-slate-200 rounded p-3"></div></div></div>`;
+const PRED={},PD={};
 function setCtl(o){Object.entries(o).forEach(([k,v])=>{const e=document.getElementById(k);if(e.type==='checkbox')e.checked=v;else e.value=v;e.dispatchEvent(new Event('input'))})}
 function initPred(card){const id=card.dataset.pred,body=card.querySelector('.pbody'),ctl=card.closest('[data-wid]').querySelector('.pctl');let q=null,opts=[],ch=null,unlocked=false,shown=false;
  const lock=f=>{ctl.querySelectorAll('.ctl').forEach(c=>c.disabled=f);ctl.classList.toggle('opacity-50',f)};
@@ -151,21 +203,32 @@ function initPred(card){const id=card.dataset.pred,body=card.querySelector('.pbo
 
 
 const TH=[
+
 ['range','Step 1: domain and range',String.raw`<p>The <b>domain</b> is the set of inputs ($x$ values) a function is allowed to use. The <b>range</b> is the set of outputs ($y$ values) it actually gives.</p>
-<p><b>From a graph:</b> ignore the $x$ values and ask how <i>low</i> and how <i>high</i> the graph goes. Check both end points and any corner or turning point. If the end points are included, use $\le$.</p>
-<p><b>From a formula:</b> look for a value the output can <i>never</i> equal. For a fraction like $\frac{3-2x}{x-5}$, split it up using GCSE division: $3-2x=-2(x-5)-7$, so</p>
-$$\frac{3-2x}{x-5}=-2-\frac{7}{x-5}$$
-<p>The fraction $\frac{7}{x-5}$ can be anything except 0, so the whole thing can be anything except $-2$. Write this as $f(x)\in\mathbb{R},\ f(x)\ne-2$. Shortcut: the excluded value is the ratio of the $x$ numbers, here $\frac{-2}{1}$.</p>`,''],
+<p><b>From a graph.</b> This is Figure 4 from the exam question. The <span class="inn">orange</span> bar along the $x$-axis is the domain. The <span class="out">indigo</span> bar up the $y$-axis is the range. To find the range, ignore the $x$ values and ask how <i>low</i> and how <i>high</i> the graph goes.</p>
+${fig4({dom:1,rng:1})}
+<p>The lowest point is $(-1,-9)$ and the highest is $(8,4)$. Both end points are included, so we use $\le$: $-9\le g(x)\le4$.</p>
+<p><b>From a formula.</b> Look for a value the output can <i>never</i> equal. For $f(x)=\frac{3-2x}{x-5}$ split it up using GCSE division: $3-2x=-2(x-5)-7$, so</p>
+$$f(x)=-2-\frac{7}{x-5}$$
+<p>The fraction $\frac{7}{x-5}$ can be anything except 0, so $f(x)$ can be anything except $-2$. On the graph, the curve gets closer and closer to the dashed line $y=-2$ but never touches it.</p>
+${svgGraph({x0:-4,x1:14,y0:-12,y1:10,st:2,label:'Graph of f of x equals (3 minus 2x) over (x minus 5), with dashed lines at y equals minus 2 and x equals 5',lines:[{x1:-4,y1:-2,x2:14,y2:-2,c:'#c2410c',d:1},{x1:5,y1:-12,x2:5,y2:10,c:'#64748b',d:1}],curves:[{f:x=>(3-2*x)/(x-5)}],texts:[{x:5.5,y:3.4,t:'dashed line y = −2: never reached',c:'#c2410c'},{x:5.3,y:8.5,t:'x = 5 (not allowed)',c:'#64748b'}]})}
+<p>Write the range as $f(x)\in\mathbb{R},\ f(x)\ne-2$. Shortcut: the excluded value is the ratio of the $x$ numbers, here $\frac{-2}{1}$.</p>`,''],
 ['inv','Step 2: inverse functions',String.raw`<p>The inverse $f^{-1}$ <b>undoes</b> $f$. Inputs and outputs swap. Use your GCSE "change the subject" skills:</p>
 <ol class="list-decimal ml-5 space-y-1"><li>Write $y=f(x)$.</li><li>Rearrange to make $x$ the subject. If $x$ appears twice, collect the $x$ terms on one side and <b>factorise</b>.</li><li>Replace $y$ with $x$. That is $f^{-1}(x)$.</li></ol>
+<p>On a graph, swapping inputs and outputs reflects the curve in the line $y=x$. Here is $f(x)=3x-4$ (indigo) and its inverse $f^{-1}(x)=\frac{x+4}{3}$ (orange).</p>
+${svgGraph({x0:-6,x1:8,y0:-6,y1:8,st:2,label:'Graph of f of x equals 3x minus 4, its inverse, and the line y equals x, which is a mirror line',lines:[{x1:-6,y1:-6,x2:8,y2:8,c:'#64748b',d:1}],curves:[{f:x=>3*x-4},{f:x=>(x+4)/3,c:'#ea580c'}],texts:[{x:5.6,y:6.2,t:'y = x',c:'#64748b'},{x:1.9,y:6.2,t:'f',c:'#4338ca'},{x:6,y:3.4,t:'f⁻¹',c:'#ea580c'}]})}
 <p>Two useful facts: the <b>range of $f$</b> is the <b>domain of $f^{-1}$</b>, and $f(f^{-1}(x))=x$, which lets you check your answer.</p>`,''],
 ['comp','Step 3: composite functions',String.raw`<p>$fg(x)$ means $f(g(x))$: <b>do $g$ first, then $f$.</b> The <span class="inn">inner function</span> is done first and the <span class="out">outer function</span> last.</p>
-<p>$gg(2)$ means do $g$ twice: find $g(2)$, then put that answer into $g$ again.</p>
-<p><b>From a graph:</b> read $g(2)$ off the graph, then find that number on the $x$-axis and read the graph again. If you need a value from a straight line piece, find its equation using $y=mx+c$ from GCSE.</p>${KEY}`,''],
-['circ','Step 4: circles and tangents',String.raw`<p>A circle with centre $(a,b)$ and radius $r$ has equation</p>
+<p>$gg(2)$ means do $g$ twice: find $g(2)$, then put that answer into $g$ again. Here it is on Figure 4:</p>
+${fig4({ex:(X,Y)=>`<circle cx="${X(2)}" cy="${Y(0)}" r="5.5" fill="#c2410c"/><circle cx="${X(0)}" cy="${Y(-6)}" r="5.5" fill="#4338ca"/>`+stx(X(2)+10,Y(0)-10,'g(2) = 0',{c:'#c2410c',b:1,s:14,a:'start'})+stx(X(0)+46,Y(-6)+5,'g(0) = −6',{c:'#4338ca',b:1,s:14,a:'start'})})}
+<p>First $g(2)=0$ (orange). Then $g(0)=-6$ (indigo), where the graph crosses the $y$-axis. So $gg(2)=-6$. For $fg(8)$, read $g(8)=4$ from the graph and then put $4$ into $f$.</p>
+<p>If you need a value from a straight line piece, find its equation using $y=mx+c$ from GCSE.</p>${KEY}`,''],
+['circ','Step 4: circles and tangents',String.raw`<p>This is Figure 3 from the exam question. A circle with centre $Q$ and radius 4, and a tangent from the origin $O$ touching the circle at $T$.</p>
+${fig3()}
+<p>A circle with centre $(a,b)$ and radius $r$ has equation</p>
 $$(x-a)^2+(y-b)^2=r^2$$
 <p>Notice the minus signs: centre $(11,5)$ gives $(x-11)^2+(y-5)^2$.</p>
-<p>A <b>tangent</b> touches the circle at one point and is at <b>right angles to the radius</b> at that point. This is the circle theorem the exam question hints at. So the tangent point, the centre and the origin make a <b>right-angled triangle</b>, and you can use Pythagoras. The distance from the origin to $(x,y)$ is $\sqrt{x^2+y^2}$.</p>`,''],
+<p>A <b>tangent</b> touches the circle at one point and is at <b>right angles to the radius</b> at that point. This is the circle theorem the exam question hints at. So $O$, $T$ and $Q$ make a <b>right-angled triangle</b> with the right angle at $T$, and you can use Pythagoras. The distance from the origin to $(x,y)$ is $\sqrt{x^2+y^2}$.</p>`,'Change $a$, $b$ and $r$ and watch the circle, its equation, the tangents and the triangle $OTQ$ change.'],
 ['fb','The formula booklet: what you are given',String.raw`<p>For these topics the Edexcel formulae booklet gives you <b>nothing</b>. It does not include the equation of a circle, the method for inverse functions or the meaning of $fg$. Learn all of them. (Pythagoras and the distance between two points are GCSE, and are not in the booklet either.)</p>`,''],
 ['err','Common mistakes (and how to avoid them)',String.raw`<p>These cost the most marks. Test yourself in <b>Spot the mistake</b>.</p><div class="space-y-3 mt-3">
 <div class="border border-red-200 bg-red-50 rounded p-3"><b>1. Doing $f$ first in $fg$.</b><br>$fg$ means $g$ first. The function nearest the $x$ goes first.</div>
@@ -175,17 +238,18 @@ $$(x-a)^2+(y-b)^2=r^2$$
 <div class="border border-red-200 bg-red-50 rounded p-3"><b>5. Putting the right angle in the wrong place.</b><br>The tangent meets the radius at $90^\circ$ at the point of contact, not at the origin.</div>
 <div class="border border-red-200 bg-red-50 rounded p-3"><b>6. Wrong signs in the circle equation.</b><br>Centre $(11,5\sqrt3)$ gives $(x-11)^2+(y-5\sqrt3)^2$, with minus signs.</div></div>
 <button onclick="goTab('spot')" class="ui mt-4 rounded-md bg-indigo-900 text-white px-4 py-2 text-sm">Go to Spot the mistake</button>`,'']];
+
 const TEX={
 range:[
 {q:String.raw`<b>Worked example.</b> Write down the range of $f(x)=\frac{2x+1}{x-3}$, $x\ne3$.`,s:[
  ['Step 1: split the fraction',String.raw`$2x+1=2(x-3)+7$, so $f(x)=2+\frac{7}{x-3}$.`],
- ['Step 2: spot what it can never be',String.raw`$\frac{7}{x-3}$ is never 0, so $f(x)$ is never 2.`],
+ ['Step 2: spot what it can never be',String.raw`$\frac{7}{x-3}$ is never 0, so $f(x)$ is never 2. The graph never reaches the dashed line $y=2$.${svgGraph({x0:-6,x1:12,y0:-8,y1:12,st:2,label:'Graph of f of x equals (2x+1) over (x minus 3) with dashed lines at y equals 2 and x equals 3',lines:[{x1:-6,y1:2,x2:12,y2:2,c:'#c2410c',d:1},{x1:3,y1:-8,x2:3,y2:12,c:'#64748b',d:1}],curves:[{f:x=>(2*x+1)/(x-3)}],texts:[{x:6,y:3.2,t:'y = 2',c:'#c2410c'}]})}`],
  ['Step 3: answer',String.raw`Range: $f(x)\in\mathbb{R},\ f(x)\ne2$.`]]}],
 inv:[
 {q:String.raw`<b>Worked example 1.</b> Find $f^{-1}(x)$ for $f(x)=3x-4$.`,s:[
  ['Step 1: write $y=f(x)$',String.raw`$y=3x-4$.`],
  ['Step 2: make $x$ the subject',String.raw`$y+4=3x$, so $x=\frac{y+4}{3}$.`],
- ['Step 3: swap $y$ for $x$',String.raw`$f^{-1}(x)=\frac{x+4}{3}$.`]]},
+ ['Step 3: swap $y$ for $x$',String.raw`$f^{-1}(x)=\frac{x+4}{3}$. This is the orange line in the graph above.`]]},
 {q:String.raw`<b>Worked example 2.</b> Find $f^{-1}(x)$ for $f(x)=\frac{x+1}{x-2}$.`,s:[
  ['Step 1: clear the fraction',String.raw`$y(x-2)=x+1$, so $xy-2y=x+1$.`],
  ['Step 2: collect the $x$ terms',String.raw`$xy-x=2y+1$.`],
@@ -198,7 +262,7 @@ comp:[
  ['Step 3: $fg(3)$',String.raw`$g(3)=9$, then $f(9)=19$. Check: $2(3)^2+1=19$. ✓`]]}],
 circ:[
 {q:String.raw`<b>Worked example.</b> A circle has centre $(3,-1)$ and radius 5. The point $(6,k)$ is on the circle, $k>0$. Find $k$.`,s:[
- ['Step 1: write the equation',String.raw`$(x-3)^2+(y+1)^2=25$.`],
+ ['Step 1: write the equation',String.raw`$(x-3)^2+(y+1)^2=25$. Here is the circle.`,v=>{const g=circG(3,-1,5);const pt=[P(3,-1,'centre (3, −1)'),P(6,3,'(6, 3)')];plot(v,[],{fit:fit([],[[-2,-1],[8,-1],[3,-6],[3,4],[6,3]]),segs:RING(3,-1,5,'#4338ca'),pts:pt})}],
  ['Step 2: substitute the point',String.raw`$(6-3)^2+(k+1)^2=25$, so $9+(k+1)^2=25$.`],
  ['Step 3: solve',String.raw`$(k+1)^2=16$, so $k+1=\pm4$ and $k=3$ or $k=-5$.`],
  ['Step 4: use the condition',String.raw`$k>0$, so $k=3$.`]]}]};
@@ -223,29 +287,25 @@ const circG=(p,k,r)=>{const d=Math.hypot(p,k),th=Math.atan2(k,p)+Math.asin(r/d),
  const ring=[];for(let i=0;i<120;i++){const t1=2*Math.PI*i/120,t2=2*Math.PI*(i+1)/120;ring.push({x1:p+r*Math.cos(t1),y1:k+r*Math.sin(t1),x2:p+r*Math.cos(t2),y2:k+r*Math.sin(t2),c:'#4338ca',w:2.2})}
  return{c:[{f:x=>k+Math.sqrt(r*r-(x-p)*(x-p)),c:'rgba(0,0,0,0)'},{f:x=>k-Math.sqrt(r*r-(x-p)*(x-p)),c:'rgba(0,0,0,0)'}],x0:p-r,x1:p+r,
  pts:[P(0,0,'O'),P(T[0],T[1],'T'),P(p,k,'Q')],segs:ring.concat([{x1:0,y1:0,x2:T[0]*1.15,y2:T[1]*1.15,c:'#ea580c',w:2.5},{x1:p,y1:k,x2:T[0],y2:T[1],c:'#0f172a'},{x1:0,y1:0,x2:p,y2:k,c:'#64748b',d:1}])}};
-const figPlot=(v,g)=>plot(v,g.c,{fit:fit(g.c.map(k=>[k.f,g.x0,g.x1]),g.pts),pts:g.pts,segs:g.segs});
-const F4=gGraph(3,4),FQ5=circG(11,5*Math.sqrt(3),4);
 const EX=[
-{t:'Example 1 · Exam question 8: functions',m:9,q:String.raw`The function $f$ is defined by $f:x\to\dfrac{3-2x}{x-5}$, $x\in\mathbb{R}$, $x\ne5$.<br>(a) Write down the range of $f$. [1 mark]<br>(b) Find $f^{-1}(x)$. [3 marks]<br>The function $g$ has domain $-1\le x\le8$. It is linear from $(-1,-9)$ to $(2,0)$ and from $(2,0)$ to $(8,4)$. Figure 4 shows $y=g(x)$.<br>(c) Write down the range of $g$. [1 mark]<br>(d) Find $gg(2)$. [2 marks]<br>(e) Find $fg(8)$. [2 marks]`,
+{t:'Example 1 · Exam question 8: functions',m:9,q:String.raw`The function $f$ is defined by $f:x\to\dfrac{3-2x}{x-5}$, $x\in\mathbb{R}$, $x\ne5$.<br>(a) Write down the range of $f$. [1 mark]<br>(b) Find $f^{-1}(x)$. [3 marks]<br>The function $g$ has domain $-1\le x\le8$, and is linear from $(-1,-9)$ to $(2,0)$ and from $(2,0)$ to $(8,4)$.<br>Figure 4 shows a sketch of the graph of $y=g(x)$.${fig4()}(c) Write down the range of $g$. [1 mark]<br>(d) Find $gg(2)$. [2 marks]<br>(e) Find $fg(8)$. [2 marks]`,
  s:[['Hint for (a)',String.raw`Ask what value the output can never be. Rewrite the fraction by dividing: $3-2x=-2(x-5)-7$.`],
  ['Working for (a)',String.raw`$f(x)=-2-\frac{7}{x-5}$. The fraction $\frac{7}{x-5}$ is never 0, so $f(x)$ is never $-2$. Range: $f(x)\in\mathbb{R}$, $f(x)\ne-2$. (Do not say $f(x)\ne5$: that is the domain.)`],
  ['Hint for (b)',String.raw`Write $y=f(x)$, clear the fraction, collect the $x$ terms, factorise, then swap $y$ for $x$.`],
  ['Working for (b)',String.raw`$y(x-5)=3-2x$, so $xy-5y=3-2x$. Collect: $xy+2x=3+5y$. Factorise: $x(y+2)=3+5y$. So $x=\frac{3+5y}{y+2}$ and $f^{-1}(x)=\frac{5x+3}{x+2}$, $x\ne-2$. (Marks: M1 clear the fraction, M1 collect and factorise, A1.)`],
- ['Hint for (c)',String.raw`The range is about heights. Look at the lowest and highest points of the graph. Here is Figure 4.`,v=>figPlot(v,F4)],
- ['Working for (c)',String.raw`The lowest point is $(-1,-9)$ and the highest is $(8,4)$. Range: $-9\le g(x)\le4$.`],
+ ['Hint for (c)',String.raw`The range is about heights. Look at the lowest and highest points of the graph in Figure 4.`],
+ ['Working for (c)',String.raw`The lowest point is $(-1,-9)$ and the highest is $(8,4)$. Range: $-9\le g(x)\le4$.${fig4({rng:1})}`],
  ['Hint for (d)',String.raw`$gg(2)$ means do $g$ twice. Start with $g(2)$, read it from the graph, then use $g$ again.`],
- ['Working for (d)',String.raw`$g(2)=0$. Now $g(0)$: $x=0$ is on the first line, from $(-1,-9)$ to $(2,0)$. Its gradient is $\frac{0-(-9)}{2-(-1)}=3$ and the graph crosses the $y$-axis at $-6$. So $g(0)=-6$ and $gg(2)=-6$.`],
+ ['Working for (d)',String.raw`$g(2)=0$. Now $g(0)$: $x=0$ is on the first line, from $(-1,-9)$ to $(2,0)$. Its gradient is $\frac{0-(-9)}{2-(-1)}=3$ and the graph crosses the $y$-axis at $-6$. So $g(0)=-6$ and $gg(2)=-6$.${fig4({ex:(X,Y)=>`<circle cx="${X(2)}" cy="${Y(0)}" r="5.5" fill="#c2410c"/><circle cx="${X(0)}" cy="${Y(-6)}" r="5.5" fill="#4338ca"/>`+stx(X(2)+10,Y(0)-10,'g(2) = 0',{c:'#c2410c',b:1,s:14,a:'start'})+stx(X(0)+46,Y(-6)+5,'g(0) = −6',{c:'#4338ca',b:1,s:14,a:'start'})})}`],
  ['Hint for (e)',String.raw`$fg(8)$ means $g$ first, then $f$.`],
  ['Working for (e)',String.raw`$g(8)=4$. Then $f(4)=\frac{3-2(4)}{4-5}=\frac{-5}{-1}=5$. So $fg(8)=5$.`]]},
-{t:'Example 2 · Exam question 5: circle and tangent',m:5,q:String.raw`Figure 3 shows a circle $C$ with centre $Q$ and radius 4 and the point $T$ which lies on $C$. The tangent to $C$ at $T$ passes through the origin $O$ and $OT=6\sqrt5$. The coordinates of $Q$ are $(11,k)$, where $k$ is a positive constant.<br>(a) Find the exact value of $k$. [3 marks]<br>(b) Find an equation for $C$. [2 marks]`,
- s:[['Hint for (a)',String.raw`The note on the paper says "think back to circle theorems". The tangent is at right angles to the radius $QT$. So triangle $OTQ$ has a right angle at $T$. Here is the picture.`,v=>figPlot(v,FQ5)],
- ['Working for (a): use Pythagoras',String.raw`$OQ^2=OT^2+TQ^2=(6\sqrt5)^2+4^2=180+16=196$. (M1)`],
+{t:'Example 2 · Exam question 5: circle and tangent',m:5,q:String.raw`${fig3()}Figure 3 shows a circle $C$ with centre $Q$ and radius 4 and the point $T$ which lies on $C$.<br>The tangent to $C$ at the point $T$ passes through the origin $O$ and $OT=6\sqrt5$.<br>Given that the coordinates of $Q$ are $(11,k)$, where $k$ is a positive constant,<br>(a) find the exact value of $k$, [3 marks]<br>(b) find an equation for $C$. [2 marks]`,
+ s:[['Hint for (a)',String.raw`The note on the paper says "think back to circle theorems". The tangent is at right angles to the radius $QT$. So triangle $OTQ$ has a right angle at $T$.`],
+ ['Working for (a): use Pythagoras',String.raw`$OQ^2=OT^2+TQ^2=(6\sqrt5)^2+4^2=180+16=196$. (M1)${fig3({tri:1})}`],
  ['Working for (a): use the coordinates',String.raw`$Q$ is $(11,k)$ and $O$ is $(0,0)$, so $OQ^2=11^2+k^2=121+k^2$. Then $121+k^2=196$, so $k^2=75$. (M1)`],
  ['Working for (a): finish',String.raw`$k=\sqrt{75}=\sqrt{25\times3}=5\sqrt3$. We take the positive root because $k$ is positive. (A1)`],
  ['Hint for (b)',String.raw`Use $(x-a)^2+(y-b)^2=r^2$ with the centre $(11,5\sqrt3)$ and radius 4.`],
  ['Working for (b)',String.raw`$(x-11)^2+(y-5\sqrt3)^2=16$. Watch the signs: both are minus. (B1 for the centre, B1 for $r^2=16$.)`]]}];
-$('#examples').insertAdjacentHTML('beforeend',EX.map((e,i)=>`<details class="bg-white rounded-lg border border-slate-200" data-ex="${i}"><summary class="ui flex items-center gap-3 p-4 font-semibold text-indigo-950"><span class="chev text-indigo-500">▶</span>${e.t}<span class="ml-auto text-xs font-normal text-slate-500">${e.m} marks</span></summary><div class="px-5 pb-5"><div class="bg-slate-50 border border-slate-200 rounded p-3 mb-3 leading-relaxed">${e.q}</div><div class="stepper"></div></div></details>`).join(''));
-$$('#examples details').forEach(d=>stepper(d.querySelector('.stepper'),EX[+d.dataset.ex].s));
 function stepper(host,steps){host.innerHTML=`<div class="steps space-y-2"></div><div class="ui flex gap-2 mt-3"><button class="next rounded-md bg-indigo-900 text-white px-4 py-2 text-sm">Show next step</button><button class="reset rounded-md border border-slate-300 px-4 py-2 text-sm">Start again</button></div>`;
  let n=0;const box=host.querySelector('.steps'),btn=host.querySelector('.next');
  btn.onclick=()=>{if(n>=steps.length)return;const st=steps[n++],h=st[0].startsWith('Hint'),el=document.createElement('div');
