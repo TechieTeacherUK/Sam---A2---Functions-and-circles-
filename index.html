@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Functions and circles: exam walkthrough – Edexcel 9MA0 Practice</title>
+<title>Functions and Circles: Exam Walkthrough – Edexcel A-Level Maths</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
@@ -22,9 +22,9 @@ canvas{width:100%;aspect-ratio:3/2;background:#fff;border:1px solid #cbd5e1;bord
 body.dark{background:#0f172a!important;color:#e2e8f0!important}.dark .bg-white{background:#1e293b!important}.dark .bg-slate-50{background:#273449!important}.dark .bg-slate-100{background:#0f172a!important}.dark .tab.bg-slate-100{background:#334155!important;color:#e2e8f0}.dark .bg-indigo-50{background:#1e1b4b!important}.dark .bg-indigo-100{background:#312e81!important}.dark .bg-indigo-200{background:#3730a3!important}.dark .bg-sky-50,.dark .bg-sky-100{background:#0c4a6e!important}.dark .bg-red-50{background:#3b1212!important}.dark .bg-emerald-50{background:#06352a!important}.dark .bg-amber-50{background:#3d2e07!important}
 .dark [class*=border-slate]{border-color:#475569!important}.dark .border-indigo-200,.dark .border-indigo-300{border-color:#6366f1!important}.dark .text-slate-500,.dark .text-slate-600,.dark .text-slate-700,.dark .text-slate-800{color:#cbd5e1!important}.dark .text-indigo-950,.dark .text-indigo-900,.dark .text-indigo-800,.dark .text-sky-900{color:#c7d2fe!important}.dark .text-emerald-900,.dark .text-emerald-800,.dark .text-emerald-700{color:#6ee7b7!important}.dark .text-red-900,.dark .text-red-800,.dark .text-red-700{color:#fca5a5!important}.dark .text-amber-800,.dark .text-amber-700{color:#fcd34d!important}
 .dark input:not([type=range]),.dark select,.dark textarea{background:#0f172a;color:#e2e8f0}.dark .opt.sel{background:#312e81}.dark .opt.ok{background:#064e3b}.dark .opt.bad{background:#7f1d1d}.dark .out{color:#a5b4fc}.dark .inn{color:#fdba74}.dark .katex [style*="4338ca"]{color:#a5b4fc!important}.dark .katex [style*="c2410c"]{color:#fdba74!important}.dark a{color:#a5b4fc}
+.chev::before{content:'';display:inline-block;border-left:.6em solid currentColor;border-top:.38em solid transparent;border-bottom:.38em solid transparent;vertical-align:middle}
 *:focus-visible{outline:3px solid #4338ca;outline-offset:2px}
 canvas.sq{aspect-ratio:1/1;max-width:420px}
-canvas.drag{aspect-ratio:1/1;max-width:520px;touch-action:none;cursor:crosshair}
 body.hc{background:#fff!important;color:#000!important}body.hc .text-slate-500,body.hc .text-slate-600,body.hc .text-slate-700{color:#111!important}
 body.hc [class*=border-slate]{border-color:#000!important}body.hc .bg-slate-100{background:#fff!important}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -33,9 +33,13 @@ body.hc [class*=border-slate]{border-color:#000!important}body.hc .bg-slate-100{
 <body class="bg-slate-100 text-slate-800">
 <header class="bg-indigo-950 text-white">
  <div class="max-w-4xl mx-auto px-4 py-5">
-  <h1 class="text-2xl sm:text-3xl font-bold">Functions and circles: exam walkthrough</h1>
-  <p class="ui text-indigo-200 text-sm mt-1">Edexcel A-Level Mathematics 9MA0 · Topics 2.8 Functions and 3.2 Circles · Practice after your lesson</p>
-  <div class="ui flex gap-2 mt-3 text-xs"><button id="tsz" aria-pressed="false" class="rounded border border-indigo-300 px-3 py-1">Larger text</button><button id="tdk" aria-pressed="false" class="rounded border border-indigo-300 px-3 py-1">Dark mode</button><button id="thc" aria-pressed="false" class="rounded border border-indigo-300 px-3 py-1">High contrast</button></div>
+  <h1 class="text-2xl sm:text-3xl font-bold">Functions and Circles: Exam Walkthrough</h1>
+  <p class="ui text-indigo-200 text-sm mt-1">Edexcel A-Level Mathematics · Step-by-Step Interactive Guide & Interactive Practice Engine</p>
+  <div class="ui flex gap-2 mt-3 text-xs">
+    <button id="tsz" aria-pressed="false" class="rounded border border-indigo-300 px-3 py-1">Larger text</button>
+    <button id="tdk" aria-pressed="false" class="rounded border border-indigo-300 px-3 py-1">Dark mode</button>
+    <button id="thc" aria-pressed="false" class="rounded border border-indigo-300 px-3 py-1">High contrast</button>
+  </div>
  </div>
 </header>
 <nav class="ui bg-white border-b border-slate-200 sticky top-0 z-10">
@@ -50,13 +54,31 @@ body.hc [class*=border-slate]{border-color:#000!important}body.hc .bg-slate-100{
 <main class="max-w-4xl mx-auto px-4 py-6">
 <section id="theory" class="space-y-3">
  <div class="ui bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-sm leading-relaxed">
-  <b>How to use this page.</b> Open each step below, then try the worked examples. They walk through two real exam questions one line at a time. Press <b>Show next step</b> to reveal the working.
+  <b>How to use this lesson.</b> Work through each theory step below to review key ideas. Then go to <b>Worked examples</b> to unlock both exam questions line by line, and test yourself on freshly generated questions in <b>Practise it</b>.
  </div>
+ <details class="ui bg-white rounded-lg border border-slate-200" open>
+  <summary class="flex items-center gap-3 p-4 font-semibold text-indigo-950"><span class="chev text-indigo-500"></span>Words you need (in plain English)</summary>
+  <ul class="px-5 pb-5 text-[15px] leading-relaxed space-y-1 list-disc ml-5">
+   <li><b>Function:</b> a rule that takes a number in and gives one number out.</li>
+   <li><b>Domain:</b> the numbers you are allowed to put in.</li>
+   <li><b>Range:</b> the numbers that can come out.</li>
+   <li><b>Asymptote:</b> a line the graph gets closer and closer to but never touches.</li>
+   <li><b>Composite function (such as fg):</b> do g first, then feed the answer into f.</li>
+   <li><b>Inverse function:</b> the function that undoes f, taking you back to where you started.</li>
+   <li><b>Tangent:</b> a straight line that just touches a circle at one point.</li>
+   <li><b>Hypotenuse:</b> the longest side of a right-angled triangle, opposite the right angle.</li>
+   <li><b>Exact value:</b> leave it as a root or fraction (like 5√3), not a rounded decimal.</li>
+  </ul>
+ </details>
  <div id="cards" class="space-y-3"></div>
 </section>
+
 <section id="examples" class="space-y-4 hidden">
- <div class="ui bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-sm leading-relaxed">Try each question yourself first. Then press <b>Show next step</b> to reveal a hint, and again for the working. Every step says what we do and why.</div>
+ <div class="ui bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-sm leading-relaxed">
+  Try each exam part yourself first! Then press <b>Show next step</b>. Each part gives you a hint first, then the full working.
+ </div>
 </section>
+
 <section id="practice" class="hidden ui">
  <div class="grid grid-cols-4 gap-2 mb-4 text-center">
   <div class="bg-white rounded-lg border border-slate-200 p-2"><div class="text-xs text-slate-500">Score</div><div id="sScore" class="text-xl font-bold text-indigo-900">0</div></div>
@@ -68,36 +90,39 @@ body.hc [class*=border-slate]{border-color:#000!important}body.hc .bg-slate-100{
   <button class="tier on rounded-full px-4 py-1.5 bg-white border border-slate-300" data-tier="all">All levels</button>
   <button class="tier rounded-full px-4 py-1.5 bg-sky-50 border border-sky-300" data-tier="t1">Fundamental · 1 pt</button>
   <button class="tier rounded-full px-4 py-1.5 bg-indigo-50 border border-indigo-300" data-tier="t2">Intermediate · 2 pts</button>
-  <button class="tier rounded-full px-4 py-1.5 bg-indigo-200 border border-indigo-500" data-tier="t3">Exam mastery · 3 pts</button>
-  <button class="tier rounded-full px-4 py-1.5 bg-slate-800 text-white border border-slate-800" data-tier="exam">Exam-style, multi-part</button>
+  <button class="tier rounded-full px-4 py-1.5 bg-indigo-200 border border-indigo-500" data-tier="t3">Exam mastery · 4 pts</button>
+  <button class="tier rounded-full px-4 py-1.5 bg-slate-800 text-white border border-slate-800" data-tier="exam">Exam-style, multi-part · 4 pts</button>
   <label class="ml-auto">Topic <select id="topicSel" class="border border-slate-300 rounded px-2 py-1"></select></label>
  </div>
  <div id="qBox" class="bg-white rounded-lg border border-slate-200 p-5"></div>
  <div id="rep"></div>
 </section>
+
 <section id="spot" class="hidden ui">
- <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-sm leading-relaxed mb-4">Each question shows a student's working with <b>one mistake</b>. Click the first line that goes wrong. Then read why it is wrong and how to fix it. These are the mistakes that cost the most marks in the exam.</div>
+ <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-sm leading-relaxed mb-4">
+  Each item below shows a student's answer containing <b>exactly one mistake</b>. Click the first line that goes wrong to learn how to avoid losing marks.
+ </div>
  <div id="spBox" class="bg-white rounded-lg border border-slate-200 p-5"></div>
 </section>
 </main>
-<footer class="ui text-center text-xs text-slate-500 pb-8">Questions are made up fresh each time. For answers containing x, type expressions like (5x+3)/(x+2). For exact answers use sqrt( ), for example 5sqrt(3). Fractions such as 1/3 are fine.</footer>
+
+<footer class="ui text-center text-xs text-slate-500 pb-8">
+ Practice questions use fresh numbers each time. Type roots like 5√3 or 5sqrt(3), and fractions like 5/3.
+</footer>
 
 <script>
-/* ---------- helpers ---------- */
+/* ---------- Helpers ---------- */
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a,pick=a=>a[rnd(0,a.length-1)];
-const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
 function ty(el){if(window.renderMathInElement)renderMathInElement(el,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false})}
 const N=n=>String(+(+n).toFixed(2));
 function F(n){if(Number.isInteger(n))return String(n);for(let d=2;d<=12;d++){const k=n*d;if(Math.abs(k-Math.round(k))<1e-9){const r=Math.round(k);return(r<0?'-':'')+'\\frac{'+Math.abs(r)+'}{'+d+'}'}}return N(n)}
 const sg=n=>n<0?String(n):'+'+n;
 const lin=(a,b)=>{if(a===0)return String(b);let s=a===1?'x':a===-1?'-x':a+'x';return b>0?s+'+'+b:b<0?s+b:s};
-const xm=p=>p===0?'x':p>0?'x-'+p:'x+'+(-p);
-const pt=(x,y)=>'('+F(x)+', '+F(y)+')';
 const P=(x,y,l,c)=>Object.assign([x,y],{l,c});
 function nums(s){s=s.replace(/[−–]/g,'-');const m=s.match(/-?\d*\.?\d+\s*\/\s*-?\d*\.?\d+|-?\d*\.?\d+/g)||[];return m.map(t=>t.includes('/')?t.split('/').reduce((a,b)=>parseFloat(a)/parseFloat(b)):parseFloat(t))}
 
-/* ---------- plotting ---------- */
+/* ---------- Canvas plotting ---------- */
 function plot(cv,curves,v){
  const dpr=window.devicePixelRatio||1,W=cv.clientWidth||600,H=cv.clientHeight||400;
  cv.width=W*dpr;cv.height=H*dpr;const c=cv.getContext('2d');c.scale(dpr,dpr);
@@ -112,34 +137,19 @@ function plot(cv,curves,v){
  c.setLineDash([]);(v.segs||[]).forEach(s=>{c.strokeStyle=s.c;c.lineWidth=s.w||2;c.setLineDash(s.d?[4,4]:[]);c.beginPath();c.moveTo(X(s.x1),Y(s.y1));c.lineTo(X(s.x2),Y(s.y2));c.stroke()});
  c.setLineDash([]);(v.pts||[]).forEach(p=>{if(!isFinite(p[0])||!isFinite(p[1]))return;c.fillStyle=p.c||'#1e1b4b';c.beginPath();c.arc(X(p[0]),Y(p[1]),5,0,7);c.fill();c.fillStyle='#0f172a';c.fillText(p.l||'',X(p[0])+7,Y(p[1])-7)})}
 
-/* auto-zoom: bounding box of everything that matters (curves over an x-interval, plus points); always includes the axes */
 function fit(items,pts=[]){let x0=0,x1=0,y0=0,y1=0;
  items.forEach(([f,a,b])=>{x0=Math.min(x0,a);x1=Math.max(x1,b);for(let i=0;i<=240;i++){const x=a+(b-a)*i/240,y=f(x);if(isFinite(y)&&Math.abs(y)<1e3){y0=Math.min(y0,y);y1=Math.max(y1,y)}}});
  pts.forEach(p=>{if(isFinite(p[0])&&isFinite(p[1])){x0=Math.min(x0,p[0]);x1=Math.max(x1,p[0]);y0=Math.min(y0,p[1]);y1=Math.max(y1,p[1])}});
  const px=Math.max((x1-x0)*.12,.6),py=Math.max((y1-y0)*.12,.6);return{x0:x0-px,x1:x1+px,y0:y0-py,y1:y1+py}}
-/* ---------- interactive widgets ---------- */
-const R=(id,l,min,max,step,val)=>`<label class="block text-sm">${l} <b id="${id}V">${val}</b><input id="${id}" class="ctl w-full" type="range" min="${min}" max="${max}" step="${step}" value="${val}"></label>`;
-const SEL=(id,l,o)=>`<label class="block text-sm">${l}<select id="${id}" class="ctl ml-2 border border-slate-300 rounded px-2 py-1">${o.map((t,i)=>`<option value="${i}">${t}</option>`).join('')}</select></label>`;
-const CK=(id,l,chk)=>`<label class="flex items-center gap-2 text-sm"><input id="${id}" class="ctl" type="checkbox" ${chk?'checked':''}> ${l}</label>`;
-const val=id=>{const x=+$('#'+id).value;const o=$('#'+id+'V');if(o)o.textContent=x;return x};
-const on=id=>$('#'+id).checked;
-const out=(w,h)=>{const e=$('#ro-'+w);e.innerHTML=h;ty(e);const c=cvs(w);if(c){c.setAttribute('role','img');c.setAttribute('aria-label','Graph. '+h.replace(/<[^>]+>/g,' ').replace(/\$/g,''))}};
-const cvs=w=>$('#cv-'+w);
 
-
-
-/* ===== FUNCTIONS AND CIRCLES WALKTHROUGH: LEARN IT ===== */
-const PI=Math.PI;
-const O=s=>String.raw`\textcolor{#4338ca}{${s}}`,I=s=>String.raw`\textcolor{#c2410c}{${s}}`;
-const KEY=String.raw`<p class="mt-2 text-sm"><b>Colour key:</b> the <span class="out">outer function</span> (done last) is indigo and the <span class="inn">inner function</span> (done first) is orange.</p>`;
-
+/* ---------- SVG figures ---------- */
 let svgN=0;
 const svgOpen=(w,h,label)=>{svgN++;return `<svg viewBox="0 0 ${w} ${h}" class="w-full my-2" style="max-width:${w}px;color:inherit" role="img" aria-label="${label}"><defs><marker id="ah${svgN}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>`};
 const stx=(x,y,t,o={})=>`<text x="${x}" y="${y}" text-anchor="${o.a||'middle'}" font-size="${o.s||15}" fill="${o.c||'currentColor'}" font-family="system-ui,sans-serif"${o.i?' font-style="italic"':''}${o.b?' font-weight="700"':''}>${t}</text>`;
 const sln=(x1,y1,x2,y2,o={})=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${o.c||'currentColor'}" stroke-width="${o.w||1.5}"${o.d?' stroke-dasharray="5 4"':''}${o.ar?` marker-end="url(#ah${svgN})"`:''}${o.op?` stroke-opacity="${o.op}"`:''}/>`;
-/* Figure 4 as printed in the exam paper (a sketch: not to scale) */
+
 function fig4(o={}){const sx=30,sy=19,X=x=>70+(x+2)*sx,Y=y=>28+(6-y)*sy;
- let s=svgOpen(480,385,'Figure 4: graph of y equals g of x, straight from (-1, -9) to (2, 0) then to (8, 4)');
+ let s=svgOpen(480,385,'Figure 4: graph of y = g(x) piecewise linear');
  s+=sln(X(-2.3),Y(0),X(10.3),Y(0),{ar:1})+sln(X(0),Y(-10.4),X(0),Y(5.3),{ar:1});
  s+=sln(X(0),Y(4),X(8),Y(4),{d:1,op:.8,w:1.2})+sln(X(8),Y(4),X(8),Y(0),{d:1,op:.8,w:1.2})+sln(X(-1),Y(0),X(-1),Y(-9),{d:1,op:.8,w:1.2})+sln(X(-1),Y(-9),X(0),Y(-9),{d:1,op:.8,w:1.2});
  if(o.dom)s+=sln(X(-1),Y(0),X(8),Y(0),{c:'#c2410c',w:6,op:.55})+stx(X(2.6),Y(0)+36,'domain: −1 ≤ x ≤ 8 (orange bar)',{c:'#c2410c',b:1,s:14,a:'start'});
@@ -148,10 +158,10 @@ function fig4(o={}){const sx=30,sy=19,X=x=>70+(x+2)*sx,Y=y=>28+(6-y)*sy;
  if(o.ex)s+=o.ex(X,Y);
  s+=stx(X(0)-10,Y(4)+5,'4',{a:'end'})+stx(X(-1)-6,Y(0)+19,'−1',{a:'end'})+stx(X(0)-8,Y(0)+19,'O',{a:'end',i:1})+stx(X(2)+12,Y(0)+19,'2')+stx(X(8),Y(0)+19,'8')+stx(X(10.4),Y(0)+5,'x',{a:'start',i:1})+stx(X(0)-14,Y(5.3)+4,'y',{a:'end',i:1})+stx(X(0)+8,Y(-6)+5,'−6',{a:'start'})+stx(X(0)+8,Y(-9)+5,'−9',{a:'start'});
  return s+stx(240,372,'Figure 4',{b:1})+'</svg>'}
-/* Figure 3 as printed in the exam paper (O at the origin, centre Q(11, 5√3), radius 4, OT = 6√5) */
+
 function fig3(o={}){const p=11,k=5*Math.sqrt(3),r=4,sc=25,X=x=>40+x*sc,Y=y=>368-y*sc,d=Math.hypot(p,k),th=Math.atan2(k,p)+Math.asin(r/d),ot=Math.sqrt(d*d-r*r),T=[ot*Math.cos(th),ot*Math.sin(th)];
  const Tp=[X(T[0]),Y(T[1])],Qp=[X(p),Y(k)],Op=[X(0),Y(0)],nrm=(a,b)=>{const l=Math.hypot(a,b);return[a/l,b/l]},u=nrm(Op[0]-Tp[0],Op[1]-Tp[1]),w=nrm(Qp[0]-Tp[0],Qp[1]-Tp[1]),q=13;
- let s=svgOpen(480,415,'Figure 3: a circle with centre Q and radius 4, and a tangent from the origin O touching the circle at T, with OT equal to 6 root 5');
+ let s=svgOpen(480,415,'Figure 3: circle C with centre Q, tangent OT touching at T');
  if(o.tri)s+=`<polygon points="${Op} ${Tp} ${Qp}" fill="#4338ca" fill-opacity=".10" stroke="none"/>`;
  s+=sln(X(-1),Y(0),X(16),Y(0),{ar:1})+sln(X(0),Y(-.8),X(0),Y(14),{ar:1})+`<circle cx="${Qp[0]}" cy="${Qp[1]}" r="${r*sc}" fill="none" stroke="currentColor" stroke-width="2"/>`;
  s+=sln(Op[0],Op[1],Tp[0]+(Tp[0]-Op[0])*.2,Tp[1]+(Tp[1]-Op[1])*.2,{w:2.2})+sln(Op[0],Op[1],Qp[0],Qp[1],{d:1,op:.8,w:1.3})+sln(Tp[0],Tp[1],Qp[0],Qp[1],{w:2});
@@ -159,7 +169,7 @@ function fig3(o={}){const p=11,k=5*Math.sqrt(3),r=4,sc=25,X=x=>40+x*sc,Y=y=>368-
  s+=`<circle cx="${Qp[0]}" cy="${Qp[1]}" r="3.5" fill="currentColor"/>`+stx(Op[0]-14,Op[1]+17,'O',{i:1})+stx(X(16.2),Y(0)+5,'x',{a:'start',i:1})+stx(X(0)-12,Y(14)+4,'y',{a:'end',i:1})+stx(Tp[0]-14,Tp[1]-6,'T',{i:1})+stx(Qp[0]+8,Qp[1]+18,'Q',{i:1})+stx(Qp[0]+r*sc*.72+10,Qp[1]+r*sc*.72+8,'C',{i:1})+stx((Op[0]+Tp[0])/2-26,(Op[1]+Tp[1])/2-4,'6√5',{b:1,c:'#c2410c',a:'end'})+stx((Tp[0]+Qp[0])/2+9,(Tp[1]+Qp[1])/2-5,'4',{b:1,c:'#4338ca',a:'start'});
  if(o.tri)s+=stx((Op[0]+Qp[0])/2+14,(Op[1]+Qp[1])/2+22,'OQ = ?',{b:1,s:14,a:'middle'})+stx(Tp[0]+30,Tp[1]+26,'90°',{b:1,s:13,a:'start'});
  return s+stx(240,403,'Figure 3',{b:1})+'</svg>'}
-/* general graph drawn as SVG */
+
 function svgGraph(o){const w=o.w||460,h=o.h||300,m=34,{x0,x1,y0,y1}=o,sx=(w-2*m)/(x1-x0),sy=(h-2*m)/(y1-y0),X=x=>m+(x-x0)*sx,Y=y=>h-m-(y-y0)*sy,st=o.st||1;
  let s=svgOpen(w,h,o.label||'Graph');
  for(let i=Math.ceil(x0/st)*st;i<=x1;i+=st){s+=sln(X(i),Y(y0),X(i),Y(y1),{op:i?.13:.8,w:1});if(i)s+=stx(X(i),Y(0)+14,i,{s:11,c:'currentColor'})}
@@ -170,115 +180,133 @@ function svgGraph(o){const w=o.w||460,h=o.h||300,m=34,{x0,x1,y0,y1}=o,sx=(w-2*m)
  (o.pts||[]).forEach(p=>{s+=`<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="4.5" fill="${p.c||'currentColor'}"/>`+stx(X(p[0])+(p.dx||8),Y(p[1])+(p.dy||-8),p.l||'',{a:'start',s:13,c:p.c||'currentColor',b:1})});
  (o.texts||[]).forEach(t=>{s+=stx(X(t.x),Y(t.y),t.t,{c:t.c,a:t.a||'start',s:13,b:1})});
  return s+'</svg>'}
+
 const RING=(a,b,r,c,wd)=>{const o=[];for(let i=0;i<120;i++){const t1=2*Math.PI*i/120,t2=2*Math.PI*(i+1)/120;o.push({x1:a+r*Math.cos(t1),y1:b+r*Math.sin(t1),x2:a+r*Math.cos(t2),y2:b+r*Math.sin(t2),c,w:wd||2.4})}return o};
+const R=(id,l,min,max,step,val)=>`<label class="block text-sm">${l} <b id="${id}V">${val}</b><input id="${id}" class="ctl w-full" type="range" min="${min}" max="${max}" step="${step}" value="${val}"></label>`;
 const shn=(v,n)=>v===0?n:`(${n}${v>0?'-'+N(v):'+'+N(-v)})`;
-const W={circ:{ctl:R('ca','Centre x-coordinate a =',-4,16,.5,11)+R('cb','Centre y-coordinate b =',-4,14,.5,8.5)+R('cr','Radius r =',1,8,.5,4)+'<p class="text-sm text-slate-600">Orange: tangents from the origin $O$. Each one touches the circle at a point $T$ and meets the radius at a right angle.</p>',
- draw(){const a=val('ca'),b=val('cb'),r=val('cr'),d=Math.hypot(a,b),segs=RING(a,b,r,'#4338ca'),pts=[P(a,b,'Q',  '#4338ca'),P(0,0,'O')],ext=[[a-r,b],[a+r,b],[a,b-r],[a,b+r],[0,0]];
+const val=id=>{const x=+$('#'+id).value;const o=$('#'+id+'V');if(o)o.textContent=x;return x};
+const out=(w,h)=>{const e=$('#ro-'+w);if(e){e.innerHTML=h;ty(e)}};
+const cvs=w=>$('#cv-'+w);
+
+/* Sandbox widget (key matches the "tangent" theory card) */
+const W={tangent:{ctl:R('ca','Centre x-coordinate a =',-4,16,.5,11)+R('cb','Centre y-coordinate b =',-4,14,.5,8.5)+R('cr','Radius r =',1,8,.5,4)+'<p class="text-sm text-slate-600">Orange: tangent from the origin $O$ to the point $T$. $OTQ$ is a right-angled triangle! In the exam question $k=5\\sqrt{3}\\approx 8.66$, so $a=11$, $b=8.5$, $r=4$ is almost the same picture.</p>',
+ draw(){const a=val('ca'),b=val('cb'),r=val('cr'),d=Math.hypot(a,b),segs=RING(a,b,r,'#4338ca'),pts=[P(a,b,'Q','#4338ca'),P(0,0,'O')],ext=[[a-r,b],[a+r,b],[a,b-r],[a,b+r],[0,0]];
   segs.push({x1:a,y1:b,x2:a+r,y2:b,c:'#64748b',w:1.6,d:1});
   let msg='';
   if(d>r+1e-9){const al=Math.atan2(b,a),ph=Math.asin(r/d),ot=Math.sqrt(d*d-r*r);
-   [1,-1].forEach((sg1,i)=>{const th=al+sg1*ph,T=[ot*Math.cos(th),ot*Math.sin(th)];ext.push(T);segs.push({x1:0,y1:0,x2:T[0]*1.12,y2:T[1]*1.12,c:'#ea580c',w:2.5},{x1:a,y1:b,x2:T[0],y2:T[1],c:'#0f172a',w:1.8});pts.push(P(T[0],T[1],i?'T′':'T','#c2410c'));
-    const u=[-T[0],-T[1]],ul=Math.hypot(...u),v=[a-T[0],b-T[1]],vl=Math.hypot(...v),s=.16*Math.max(r,2);const A=[T[0]+u[0]/ul*s,T[1]+u[1]/ul*s],B=[T[0]+v[0]/vl*s,T[1]+v[1]/vl*s],C=[A[0]+B[0]-T[0],A[1]+B[1]-T[1]];
-    segs.push({x1:A[0],y1:A[1],x2:C[0],y2:C[1],c:'#0f172a',w:1.3},{x1:C[0],y1:C[1],x2:B[0],y2:B[1],c:'#0f172a',w:1.3})});
-   msg=String.raw`<b>Right-angled triangle $OTQ$ (right angle at $T$):</b><br>$OQ^2=a^2+b^2=${N(a*a)}+${N(b*b)}=${N(d*d)}$<br>$OT^2=OQ^2-r^2=${N(d*d)}-${N(r*r)}=${N(d*d-r*r)}$, so $OT\approx${N(ot)}$.`}
-  else msg='The origin is <b>inside</b> or on the circle, so there is no tangent from $O$. Move the centre away or make the radius smaller.';
-  plot(cvs('circ'),[],{fit:fit([],ext),segs,pts});
-  out('circ',String.raw`<b>Equation:</b> $${shn(a,'x')}^2+${shn(b,'y')}^2=${N(r*r)}$<br><b>Centre</b> $Q(${N(a)},${N(b)})$, <b>radius</b> $${N(r)}$.<br>${msg}`)}}};
-const wb=(id,tt)=>`<div data-wid="${id}" class="grid md:grid-cols-2 gap-4 mt-4"><div class="ui space-y-3">${tt?`<p class="text-sm font-semibold text-indigo-900">Try it: <span class="font-normal text-slate-700">${tt}</span></p>`:''}<div class="pctl space-y-3">${W[id].ctl}</div></div><div><canvas id="cv-${id}"></canvas><div id="ro-${id}" aria-live="polite" class="ui text-sm mt-3 leading-relaxed bg-slate-50 border border-slate-200 rounded p-3"></div></div></div>`;
-const PRED={},PD={};
-function setCtl(o){Object.entries(o).forEach(([k,v])=>{const e=document.getElementById(k);if(e.type==='checkbox')e.checked=v;else e.value=v;e.dispatchEvent(new Event('input'))})}
-function initPred(card){const id=card.dataset.pred,body=card.querySelector('.pbody'),ctl=card.closest('[data-wid]').querySelector('.pctl');let q=null,opts=[],ch=null,unlocked=false,shown=false;
- const lock=f=>{ctl.querySelectorAll('.ctl').forEach(c=>c.disabled=f);ctl.classList.toggle('opacity-50',f)};
- function ask(){q=PRED[id]();opts=predOpts(q.opts);ch=null;shown=false;setCtl(PD[id]);if(!unlocked)lock(true);
-  body.innerHTML=`<p class="font-semibold text-indigo-950 mb-1">Predict first</p><p>${q.txt}</p><div class="space-y-1 my-2" role="radiogroup" aria-label="Your prediction">${opts.map((o,i)=>`<button type="button" class="popt w-full text-left border-2 border-slate-200 bg-white rounded px-3 py-1.5" role="radio" aria-checked="false" data-i="${i}">${o.p}</button>`).join('')}</div><div class="pf" aria-live="polite"></div><div class="flex flex-wrap gap-2 mt-2"><button type="button" class="pgo rounded bg-indigo-900 text-white px-3 py-1.5 opacity-50" disabled>Show me on the diagram</button>${unlocked?'':'<button type="button" class="pskip rounded border border-slate-300 bg-white px-3 py-1.5">Skip: explore freely</button>'}</div>`;ty(body);
-  const go=body.querySelector('.pgo');
-  body.querySelectorAll('.popt').forEach(b=>b.onclick=()=>{if(shown)return;ch=+b.dataset.i;body.querySelectorAll('.popt').forEach(x=>{x.classList.remove('sel');x.setAttribute('aria-checked','false')});b.classList.add('sel');b.setAttribute('aria-checked','true');go.disabled=false;go.classList.remove('opacity-50')});
-  go.onclick=()=>{if(shown){ask();return}shown=true;const ok=opts[ch].ok;setCtl(q.set);unlocked=true;lock(false);
-   body.querySelectorAll('.popt').forEach((x,i)=>{if(opts[i].ok)x.classList.add('ok');else if(i===ch)x.classList.add('bad')});
-   body.querySelector('.pf').innerHTML=`<p class="mt-1 ${ok?'text-emerald-800':'text-red-800'}"><b>${ok?'Correct.':'Not quite.'}</b> The answer is <b>${opts.find(o=>o.ok).p}</b>. ${q.why} Now look at the diagram and the working under it.</p>`;ty(body.querySelector('.pf'));
-   go.textContent='Try another prediction';const sk=body.querySelector('.pskip');if(sk)sk.remove();
-   S.pr=S.pr||{n:0,ok:0};S.pr.n++;if(ok)S.pr.ok++;save();report()};
-  const sk=body.querySelector('.pskip');if(sk)sk.onclick=()=>{unlocked=true;lock(false);body.innerHTML='<button type="button" class="pagain rounded border border-indigo-300 bg-white px-3 py-1.5">Test myself with a prediction</button>';body.querySelector('.pagain').onclick=ask}}
- ask()}
+   [1,-1].forEach((sg1,i)=>{const th=al+sg1*ph,T=[ot*Math.cos(th),ot*Math.sin(th)];ext.push(T);segs.push({x1:0,y1:0,x2:T[0]*1.12,y2:T[1]*1.12,c:'#ea580c',w:2.5},{x1:a,y1:b,x2:T[0],y2:T[1],c:'#0f172a',w:1.8});pts.push(P(T[0],T[1],i?'T′':'T','#c2410c'))});
+   msg=String.raw`<b>Right-angled triangle $OTQ$:</b><br>$OQ^2=a^2+b^2=${N(a*a)}+${N(b*b)}=${N(d*d)}$<br>$OT^2=OQ^2-r^2=${N(d*d)}-${N(r*r)}=${N(d*d-r*r)}$, so $OT\approx${N(ot)}$.`}
+  else msg='The origin is inside the circle, so no tangent from $O$ exists.';
+  plot(cvs('tangent'),[],{fit:fit([],ext),segs,pts});
+  out('tangent',String.raw`<b>Equation:</b> $${shn(a,'x')}^2+${shn(b,'y')}^2=${N(r*r)}$<br><b>Centre</b> $Q(${N(a)},${N(b)})$, <b>radius</b> $${N(r)}$.<br>${msg}`)}}};
+const wb=(id,tt)=>`<div data-wid="${id}" class="grid md:grid-cols-2 gap-4 mt-4"><div class="ui space-y-3">${tt?`<p class="text-sm font-semibold text-indigo-900">Interactive sandbox: <span class="font-normal text-slate-700">${tt}</span></p>`:''}<div class="pctl space-y-3">${W[id].ctl}</div></div><div><canvas id="cv-${id}"></canvas><div id="ro-${id}" aria-live="polite" class="ui text-sm mt-3 leading-relaxed bg-slate-50 border border-slate-200 rounded p-3"></div></div></div>`;
 
-
+/* ---------- Theory cards ---------- */
 const TH=[
+['rational','Domain and Range of a Fraction Function',String.raw`<p>Given $f(x)=\frac{3-2x}{x-5}$ for $x\in\mathbb{R}, x\neq 5$:</p>
+<ul class="list-disc ml-5 space-y-1">
+ <li><b>Domain (what can go in):</b> every number except $x=5$, because $x=5$ would mean dividing by zero.</li>
+ <li><b>Range (what can come out):</b> as $x$ gets very large (positive or negative), $f(x)$ gets close to $\frac{-2}{1}=-2$. So the graph has a flat line it never touches at $y=-2$ (a horizontal asymptote).</li>
+</ul>
+<p>Split the fraction: $\frac{3-2x}{x-5}=\frac{-2(x-5)-7}{x-5}=-2-\frac{7}{x-5}$. The fraction $\frac{7}{x-5}$ can never be zero, so $f(x)$ can never equal $-2$.</p>
+${svgGraph({x0:-4,x1:14,y0:-12,y1:10,st:2,label:'Graph of f(x) with asymptotes at y=-2 and x=5',lines:[{x1:-4,y1:-2,x2:14,y2:-2,c:'#c2410c',d:1},{x1:5,y1:-12,x2:5,y2:10,c:'#64748b',d:1}],curves:[{f:x=>(3-2*x)/(x-5)}],texts:[{x:8,y:-0.9,t:'y = −2 (never reached)',c:'#c2410c'},{x:5.3,y:8.5,t:'x ≠ 5',c:'#64748b'}]})}`,''],
 
-['range','Step 1: domain and range',String.raw`<p>The <b>domain</b> is the set of inputs ($x$ values) a function is allowed to use. The <b>range</b> is the set of outputs ($y$ values) it actually gives.</p>
-<p><b>From a graph.</b> This is Figure 4 from the exam question. The <span class="inn">orange</span> bar along the $x$-axis is the domain. The <span class="out">indigo</span> bar up the $y$-axis is the range. To find the range, ignore the $x$ values and ask how <i>low</i> and how <i>high</i> the graph goes.</p>
-${fig4({dom:1,rng:1})}
-<p>The lowest point is $(-1,-9)$ and the highest is $(8,4)$. Both end points are included, so we use $\le$: $-9\le g(x)\le4$.</p>
-<p><b>From a formula.</b> Look for a value the output can <i>never</i> equal. For $f(x)=\frac{3-2x}{x-5}$ split it up using GCSE division: $3-2x=-2(x-5)-7$, so</p>
-$$f(x)=-2-\frac{7}{x-5}$$
-<p>The fraction $\frac{7}{x-5}$ can be anything except 0, so $f(x)$ can be anything except $-2$. On the graph, the curve gets closer and closer to the dashed line $y=-2$ but never touches it.</p>
-${svgGraph({x0:-4,x1:14,y0:-12,y1:10,st:2,label:'Graph of f of x equals (3 minus 2x) over (x minus 5), with dashed lines at y equals minus 2 and x equals 5',lines:[{x1:-4,y1:-2,x2:14,y2:-2,c:'#c2410c',d:1},{x1:5,y1:-12,x2:5,y2:10,c:'#64748b',d:1}],curves:[{f:x=>(3-2*x)/(x-5)}],texts:[{x:5.5,y:3.4,t:'dashed line y = −2: never reached',c:'#c2410c'},{x:5.3,y:8.5,t:'x = 5 (not allowed)',c:'#64748b'}]})}
-<p>Write the range as $f(x)\in\mathbb{R},\ f(x)\ne-2$. Shortcut: the excluded value is the ratio of the $x$ numbers, here $\frac{-2}{1}$.</p>`,''],
-['inv','Step 2: inverse functions',String.raw`<p>The inverse $f^{-1}$ <b>undoes</b> $f$. Inputs and outputs swap. Use your GCSE "change the subject" skills:</p>
-<ol class="list-decimal ml-5 space-y-1"><li>Write $y=f(x)$.</li><li>Rearrange to make $x$ the subject. If $x$ appears twice, collect the $x$ terms on one side and <b>factorise</b>.</li><li>Replace $y$ with $x$. That is $f^{-1}(x)$.</li></ol>
-<p>On a graph, swapping inputs and outputs reflects the curve in the line $y=x$. Here is $f(x)=3x-4$ (indigo) and its inverse $f^{-1}(x)=\frac{x+4}{3}$ (orange).</p>
-${svgGraph({x0:-6,x1:8,y0:-6,y1:8,st:2,label:'Graph of f of x equals 3x minus 4, its inverse, and the line y equals x, which is a mirror line',lines:[{x1:-6,y1:-6,x2:8,y2:8,c:'#64748b',d:1}],curves:[{f:x=>3*x-4},{f:x=>(x+4)/3,c:'#ea580c'}],texts:[{x:5.6,y:6.2,t:'y = x',c:'#64748b'},{x:1.9,y:6.2,t:'f',c:'#4338ca'},{x:6,y:3.4,t:'f⁻¹',c:'#ea580c'}]})}
-<p>Two useful facts: the <b>range of $f$</b> is the <b>domain of $f^{-1}$</b>, and $f(f^{-1}(x))=x$, which lets you check your answer.</p>`,''],
-['comp','Step 3: composite functions',String.raw`<p>$fg(x)$ means $f(g(x))$: <b>do $g$ first, then $f$.</b> The <span class="inn">inner function</span> is done first and the <span class="out">outer function</span> last.</p>
-<p>$gg(2)$ means do $g$ twice: find $g(2)$, then put that answer into $g$ again. Here it is on Figure 4:</p>
-${fig4({ex:(X,Y)=>`<circle cx="${X(2)}" cy="${Y(0)}" r="5.5" fill="#c2410c"/><circle cx="${X(0)}" cy="${Y(-6)}" r="5.5" fill="#4338ca"/>`+stx(X(2)+10,Y(0)-10,'g(2) = 0',{c:'#c2410c',b:1,s:14,a:'start'})+stx(X(0)+46,Y(-6)+5,'g(0) = −6',{c:'#4338ca',b:1,s:14,a:'start'})})}
-<p>First $g(2)=0$ (orange). Then $g(0)=-6$ (indigo), where the graph crosses the $y$-axis. So $gg(2)=-6$. For $fg(8)$, read $g(8)=4$ from the graph and then put $4$ into $f$.</p>
-<p>If you need a value from a straight line piece, find its equation using $y=mx+c$ from GCSE.</p>${KEY}`,''],
-['circ','Step 4: circles and tangents',String.raw`<p>This is Figure 3 from the exam question. A circle with centre $Q$ and radius 4, and a tangent from the origin $O$ touching the circle at $T$.</p>
-${fig3()}
-<p>A circle with centre $(a,b)$ and radius $r$ has equation</p>
-$$(x-a)^2+(y-b)^2=r^2$$
-<p>Notice the minus signs: centre $(11,5)$ gives $(x-11)^2+(y-5)^2$.</p>
-<p>A <b>tangent</b> touches the circle at one point and is at <b>right angles to the radius</b> at that point. This is the circle theorem the exam question hints at. So $O$, $T$ and $Q$ make a <b>right-angled triangle</b> with the right angle at $T$, and you can use Pythagoras. The distance from the origin to $(x,y)$ is $\sqrt{x^2+y^2}$.</p>`,'Change $a$, $b$ and $r$ and watch the circle, its equation, the tangents and the triangle $OTQ$ change.'],
-['fb','The formula booklet: what you are given',String.raw`<p>For these topics the Edexcel formulae booklet gives you <b>nothing</b>. It does not include the equation of a circle, the method for inverse functions or the meaning of $fg$. Learn all of them. (Pythagoras and the distance between two points are GCSE, and are not in the booklet either.)</p>`,''],
-['err','Common mistakes (and how to avoid them)',String.raw`<p>These cost the most marks. Test yourself in <b>Spot the mistake</b>.</p><div class="space-y-3 mt-3">
-<div class="border border-red-200 bg-red-50 rounded p-3"><b>1. Doing $f$ first in $fg$.</b><br>$fg$ means $g$ first. The function nearest the $x$ goes first.</div>
-<div class="border border-red-200 bg-red-50 rounded p-3"><b>2. Giving $x$ values for the range.</b><br>Range is about heights ($y$). Domain is about inputs ($x$).</div>
-<div class="border border-red-200 bg-red-50 rounded p-3"><b>3. Mixing up domain and range for a fraction.</b><br>$x\ne5$ is a fact about the <i>domain</i>. The range exclusion is a different number ($-2$ in the exam question).</div>
-<div class="border border-red-200 bg-red-50 rounded p-3"><b>4. Sign slips when collecting $x$ terms.</b><br>Move terms across carefully, then factorise. Check with $f(f^{-1}(x))=x$.</div>
-<div class="border border-red-200 bg-red-50 rounded p-3"><b>5. Putting the right angle in the wrong place.</b><br>The tangent meets the radius at $90^\circ$ at the point of contact, not at the origin.</div>
-<div class="border border-red-200 bg-red-50 rounded p-3"><b>6. Wrong signs in the circle equation.</b><br>Centre $(11,5\sqrt3)$ gives $(x-11)^2+(y-5\sqrt3)^2$, with minus signs.</div></div>
-<button onclick="goTab('spot')" class="ui mt-4 rounded-md bg-indigo-900 text-white px-4 py-2 text-sm">Go to Spot the mistake</button>`,'']];
+['inverse','Finding the Inverse Function f⁻¹(x)',String.raw`<p>The inverse function undoes $f$. To find $f^{-1}(x)$, follow three steps:</p>
+<ol class="list-decimal ml-5 space-y-1">
+ <li>Write $y=f(x)$, e.g. $y = \frac{3-2x}{x-5}$.</li>
+ <li>Rearrange to get $x$ on its own:
+    $$y(x-5) = 3-2x \implies yx - 5y = 3 - 2x$$
+    Gather the $x$ terms on one side: $yx + 2x = 5y + 3 \implies x(y+2) = 5y+3 \implies x = \frac{5y+3}{y+2}$.
+ </li>
+ <li>Swap $y$ for $x$: $f^{-1}(x) = \frac{5x+3}{x+2}$.</li>
+</ol>
+<p><b>Key link:</b> what can go into $f^{-1}$ is what came out of $f$. So $f^{-1}$ has $x \neq -2$.</p>`,''],
+
+['piecewise','Graphs Made of Straight Pieces, and gg(x), fg(x)',String.raw`<p>For gg(2) or fg(8), work from the <b>inside out</b>:</p>
+<ul class="list-disc ml-5 space-y-1">
+ <li><b>gg(2):</b> first find $g(2)$. In Figure 4, at $x=2$ the graph is at $y=0$, so $g(2)=0$. Next find $g(0)$. The straight piece from $(-1,-9)$ to $(2,0)$ has equation $y=3x-6$, so at $x=0$, $y=-6$. So $gg(2)=-6$.</li>
+ <li><b>fg(8):</b> first find $g(8)=4$. Then put $4$ into $f$: $f(4)=\frac{3-2(4)}{4-5}=\frac{-5}{-1}=5$.</li>
+</ul>
+${fig4({ex:(X,Y)=>`<circle cx="${X(2)}" cy="${Y(0)}" r="5.5" fill="#c2410c"/><circle cx="${X(0)}" cy="${Y(-6)}" r="5.5" fill="#4338ca"/>`+stx(X(2)+10,Y(0)-10,'g(2) = 0',{c:'#c2410c',b:1,s:14,a:'start'})+stx(X(0)+46,Y(-6)+5,'g(0) = −6',{c:'#4338ca',b:1,s:14,a:'start'})})}`,''],
+
+['tangent','Circles and Tangents',String.raw`<p>Circle rule to remember: <b>a tangent meets the radius at a right angle (90°) at the point where it touches.</b></p>
+<p>In Question 5, the tangent $OT$ meets the radius $QT$ at $90^\circ$. That makes $\triangle OTQ$ a right-angled triangle with the longest side (the hypotenuse) $OQ$.</p>
+<ul class="list-disc ml-5 space-y-1">
+ <li>Pythagoras: $OQ^2 = OT^2 + QT^2 = (6\sqrt{5})^2 + 4^2 = 180 + 16 = 196 \implies OQ = 14$.</li>
+ <li>Using the coordinates $O(0,0)$ and $Q(11,k)$: $OQ^2 = 11^2 + k^2 = 121 + k^2 = 196 \implies k^2 = 75 \implies k = 5\sqrt{3}$.</li>
+ <li>Equation of circle $C$: $(x-11)^2 + (y-5\sqrt{3})^2 = 16$.</li>
+</ul>
+${fig3({tri:1})}`,'Change the centre or radius and watch the right-angled triangle OTQ change.']];
 
 const TEX={
-range:[
-{q:String.raw`<b>Worked example.</b> Write down the range of $f(x)=\frac{2x+1}{x-3}$, $x\ne3$.`,s:[
- ['Step 1: split the fraction',String.raw`$2x+1=2(x-3)+7$, so $f(x)=2+\frac{7}{x-3}$.`],
- ['Step 2: spot what it can never be',String.raw`$\frac{7}{x-3}$ is never 0, so $f(x)$ is never 2. The graph never reaches the dashed line $y=2$.${svgGraph({x0:-6,x1:12,y0:-8,y1:12,st:2,label:'Graph of f of x equals (2x+1) over (x minus 3) with dashed lines at y equals 2 and x equals 3',lines:[{x1:-6,y1:2,x2:12,y2:2,c:'#c2410c',d:1},{x1:3,y1:-8,x2:3,y2:12,c:'#64748b',d:1}],curves:[{f:x=>(2*x+1)/(x-3)}],texts:[{x:6,y:3.2,t:'y = 2',c:'#c2410c'}]})}`],
- ['Step 3: answer',String.raw`Range: $f(x)\in\mathbb{R},\ f(x)\ne2$.`]]}],
-inv:[
-{q:String.raw`<b>Worked example 1.</b> Find $f^{-1}(x)$ for $f(x)=3x-4$.`,s:[
- ['Step 1: write $y=f(x)$',String.raw`$y=3x-4$.`],
- ['Step 2: make $x$ the subject',String.raw`$y+4=3x$, so $x=\frac{y+4}{3}$.`],
- ['Step 3: swap $y$ for $x$',String.raw`$f^{-1}(x)=\frac{x+4}{3}$. This is the orange line in the graph above.`]]},
-{q:String.raw`<b>Worked example 2.</b> Find $f^{-1}(x)$ for $f(x)=\frac{x+1}{x-2}$.`,s:[
- ['Step 1: clear the fraction',String.raw`$y(x-2)=x+1$, so $xy-2y=x+1$.`],
- ['Step 2: collect the $x$ terms',String.raw`$xy-x=2y+1$.`],
- ['Step 3: factorise',String.raw`$x(y-1)=2y+1$, so $x=\frac{2y+1}{y-1}$.`],
- ['Step 4: swap $y$ for $x$',String.raw`$f^{-1}(x)=\frac{2x+1}{x-1}$.`]]}],
-comp:[
-{q:String.raw`<b>Worked example.</b> $f(x)=2x+1$ and $g(x)=x^2$. Find $fg(x)$, $gf(x)$ and $fg(3)$.`,s:[
- ['Step 1: $fg$ means $g$ first',String.raw`$fg(x)=f(${I('x^2')})=2x^2+1$. The inner function $g$ goes inside $f$.`],
- ['Step 2: $gf$ means $f$ first',String.raw`$gf(x)=g(${I('2x+1')})=(2x+1)^2$. Different answer, so order matters.`],
- ['Step 3: $fg(3)$',String.raw`$g(3)=9$, then $f(9)=19$. Check: $2(3)^2+1=19$. ✓`]]}],
-circ:[
-{q:String.raw`<b>Worked example.</b> A circle has centre $(3,-1)$ and radius 5. The point $(6,k)$ is on the circle, $k>0$. Find $k$.`,s:[
- ['Step 1: write the equation',String.raw`$(x-3)^2+(y+1)^2=25$. Here is the circle.`,v=>{const g=circG(3,-1,5);const pt=[P(3,-1,'centre (3, −1)'),P(6,3,'(6, 3)')];plot(v,[],{fit:fit([],[[-2,-1],[8,-1],[3,-6],[3,4],[6,3]]),segs:RING(3,-1,5,'#4338ca'),pts:pt})}],
- ['Step 2: substitute the point',String.raw`$(6-3)^2+(k+1)^2=25$, so $9+(k+1)^2=25$.`],
- ['Step 3: solve',String.raw`$(k+1)^2=16$, so $k+1=\pm4$ and $k=3$ or $k=-5$.`],
- ['Step 4: use the condition',String.raw`$k>0$, so $k=3$.`]]}]};
+rational:[{q:String.raw`Write down the range of $h(x) = \frac{4-3x}{x-2}$.`,s:[
+ ['Step 1: Where does it level off?','As $x$ gets very large, $h(x)$ gets close to $\frac{-3}{1}=-3$.'],
+ ['Step 2: Check by splitting the fraction','$h(x) = \frac{-3(x-2)-2}{x-2} = -3 - \frac{2}{x-2}$, and $\frac{2}{x-2}$ is never zero, so $h(x) \neq -3$.'],
+ ['Step 3: State the range','Range: $h(x)\in\mathbb{R}, h(x)\neq -3$.']]}],
+inverse:[{q:String.raw`Find the inverse of $g(x) = \frac{2x+1}{x-4}$.`,s:[
+ ['Step 1: Write y = g(x)','$y = \frac{2x+1}{x-4}$.'],
+ ['Step 2: Rearrange','$y(x-4) = 2x+1 \implies xy - 4y = 2x + 1 \implies xy - 2x = 4y + 1$.'],
+ ['Step 3: Take x out as a common factor, then divide','$x(y-2) = 4y + 1 \implies x = \frac{4y+1}{y-2}$.'],
+ ['Step 4: Give the answer','$g^{-1}(x) = \frac{4x+1}{x-2}$.']]}],
+piecewise:[{q:String.raw`Find $g(g(2))$ where $g(x)$ is a straight line from $(-1,-9)$ to $(2,0)$.`,s:[
+ ['Step 1: Read g(2)','The point $(2,0)$ is on the graph, so $g(2)=0$.'],
+ ['Step 2: Find the steepness (gradient)','$m = \frac{0-(-9)}{2-(-1)} = \frac{9}{3} = 3$.'],
+ ['Step 3: Find g(0)','$y - 0 = 3(x-2) \implies y = 3x - 6$. At $x=0$, $g(0) = -6$.'],
+ ['Step 4: Final value','$gg(2) = -6$.']]}],
+tangent:[{q:String.raw`A circle has centre $(8,k)$ with $k>0$, and radius $3$. The tangent from the origin $O$ touches the circle at $T$, and $OT = 4\sqrt{5}$. Find $k$.`,s:[
+ ['Step 1: Right-angled triangle OTQ','The tangent meets the radius at $90^\circ$, so $OQ^2 = OT^2 + r^2 = (4\sqrt{5})^2 + 3^2 = 80 + 9 = 89$.'],
+ ['Step 2: Distance from the origin using coordinates','$OQ^2 = 8^2 + k^2 = 64 + k^2$.'],
+ ['Step 3: Put them equal','$64 + k^2 = 89 \implies k^2 = 25$.'],
+ ['Step 4: Solve','$k = 5$ (we are told $k>0$).']]}]};
 
-$('#cards').innerHTML=TH.map((t,i)=>`<details class="bg-white rounded-lg border border-slate-200" data-w="${t[0]}" ${i==0?'open':''}><summary class="ui flex items-center gap-3 p-4 font-semibold text-indigo-950"><span class="chev text-indigo-500">▶</span>${t[1]}</summary>
+$('#cards').innerHTML=TH.map((t,i)=>`<details class="bg-white rounded-lg border border-slate-200" data-w="${t[0]}" ${i===0?'open':''}><summary class="ui flex items-center gap-3 p-4 font-semibold text-indigo-950"><span class="chev text-indigo-500"></span>${t[1]}</summary>
 <div class="px-5 pb-5 text-[15px] leading-relaxed"><div class="body">${t[2]}</div>
-${W[t[0]]?`<div class="mt-4 pt-4 border-t border-slate-200">${wb(t[0],t[3])}</div>`:''}${TEX[t[0]]?`<div class="mt-5 pt-4 border-t border-slate-200"><h3 class="ui font-semibold text-indigo-950 mb-3">Worked example${TEX[t[0]].length>1?'s':''}</h3>${TEX[t[0]].map((e,i)=>`<div class="mb-5" data-ex-host="${t[0]}-${i}"><div class="bg-slate-50 border border-slate-200 rounded p-3 mb-3">${e.q}</div><div class="stepper"></div></div>`).join('')}</div>`:''}</div></details>`).join('');
+${W[t[0]]?`<div class="mt-4 pt-4 border-t border-slate-200">${wb(t[0],t[3])}</div>`:''}${TEX[t[0]]?`<div class="mt-5 pt-4 border-t border-slate-200"><h3 class="ui font-semibold text-indigo-950 mb-3">Worked example</h3>${TEX[t[0]].map((e,i)=>`<div class="mb-5" data-ex-host="${t[0]}-${i}"><div class="bg-slate-50 border border-slate-200 rounded p-3 mb-3">${e.q}</div><div class="stepper"></div></div>`).join('')}</div>`:''}</div></details>`).join('');
+
 $$('[data-ex-host]').forEach(h=>{const [w,i]=h.dataset.exHost.split('-');stepper(h.querySelector('.stepper'),TEX[w][+i].s)});
-function drawAll(root){root.querySelectorAll('[data-wid]').forEach(b=>{if(b.offsetParent!==null)W[b.dataset.wid].draw()})}
+function drawAll(root){root.querySelectorAll('[data-wid]').forEach(b=>{if(b.offsetParent!==null&&W[b.dataset.wid])W[b.dataset.wid].draw()})}
 $$('#cards [data-wid]').forEach(b=>{const w=b.dataset.wid;b.querySelectorAll('.ctl').forEach(e=>e.addEventListener('input',()=>W[w].draw()))});
-$$('#cards [data-pred]').forEach(initPred);
 $$('#cards details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)drawAll(d)}));
 
+/* ---------- Worked examples ---------- */
+const EX=[
+{t:'Question 8 Walkthrough: Functions',m:9,q:String.raw`The function $f$ is defined by $f:x\to\dfrac{3-2x}{x-5}$, $x\in\mathbb{R}, x\neq 5$.<br>(a) Write down the range of $f$. [1 mark]<br>(b) Find $f^{-1}(x)$. [3 marks]<br>The function $g$ has domain $-1\le x\le 8$, and is linear from $(-1,-9)$ to $(2,0)$ and from $(2,0)$ to $(8,4)$.<br>Figure 4 shows a sketch of the graph of $y=g(x)$.${fig4()}(c) Write down the range of $g$. [1 mark]<br>(d) Find $gg(2)$. [2 marks]<br>(e) Find $fg(8)$. [2 marks]`,
+ s:[
+ ['Reading the notation',String.raw`$f:x\to\frac{3-2x}{x-5}$ means $f(x)=\frac{3-2x}{x-5}$. The rule $x\ne5$ stops us dividing by zero.`],
+ ['Hint for part (a)',String.raw`As $x$ gets very large, what number does $f(x)$ get close to but never reach? Try splitting the fraction into a number plus a smaller fraction.`],
+ ['Part (a) working',String.raw`$\frac{3-2x}{x-5}=-2-\frac{7}{x-5}$. Since $\frac{7}{x-5}$ is never $0$, $f(x)\ne -2$.<br><b>Range:</b> $f(x)\in\mathbb{R}, f(x)\ne -2$.`],
+ ['Hint for part (b)',String.raw`Write $y=\frac{3-2x}{x-5}$, multiply both sides by $(x-5)$, gather the $x$ terms on one side, then take $x$ out as a common factor.`],
+ ['Part (b) working',String.raw`$y(x-5)=3-2x \implies yx-5y=3-2x \implies yx+2x=5y+3 \implies x(y+2)=5y+3 \implies x=\frac{5y+3}{y+2}$.<br><b>Answer:</b> $f^{-1}(x)=\frac{5x+3}{x+2}, x\ne -2$.`],
+ ['Hint for part (c)',String.raw`The range is every height (output) the graph reaches, from the lowest point to the highest point.`],
+ ['Part (c) working',String.raw`Lowest point is $(-1,-9)$ and highest point is $(8,4)$.<br><b>Range:</b> $-9\le g(x)\le 4$.${fig4({rng:1})}`],
+ ['Hint for part (d)',String.raw`$gg(2)$ means $g(g(2))$. Work out the inside $g(2)$ first, then put that answer into $g$ again.`],
+ ['Part (d) working',String.raw`From the graph, $g(2)=0$. Now find $g(0)$: the piece from $(-1,-9)$ to $(2,0)$ has gradient $\frac{0-(-9)}{2-(-1)}=3$ and cuts the $y$-axis at $-6$. So $g(0)=-6$.<br><b>Answer:</b> $gg(2)=-6$.`],
+ ['Hint for part (e)',String.raw`$fg(8)$ means $f(g(8))$. Read $g(8)$ off the graph, then put it into $f$.`],
+ ['Part (e) working',String.raw`From the graph, $g(8)=4$. Now $f(4)=\frac{3-2(4)}{4-5}=\frac{-5}{-1}=5$.<br><b>Answer:</b> $fg(8)=5$.`]]},
 
-/* ---------- worked examples ---------- */
-const r2=n=>+(+n).toFixed(2),cl=(a,b)=>Math.abs(a-b)<.02;
+{t:'Question 5 Walkthrough: Circle and Tangent',m:5,q:String.raw`${fig3()}Figure 3 shows a circle $C$ with centre $Q$ and radius 4. The tangent to $C$ at the point $T$ passes through the origin $O$ and $T$ lies on $C$, and $OT=6\sqrt{5}$.<br>Given that the coordinates of $Q$ are $(11,k)$, where $k$ is a positive constant,<br>(a) find the exact value of $k$. [3 marks]<br>(b) find an equation for $C$. [2 marks]`,
+ s:[
+ ['Part (a) Hint: the circle rule',String.raw`A tangent meets the radius at $90^\circ$ at the point where it touches. So $\triangle OTQ$ has a right angle at $T$.`],
+ ['Part (a) Step 1: Pythagoras on OTQ',String.raw`$OQ^2 = OT^2 + QT^2 = (6\sqrt{5})^2 + 4^2 = 180 + 16 = 196 \implies OQ = 14$.${fig3({tri:1})}`],
+ ['Part (a) Step 2: Distance from the origin',String.raw`Using the coordinates $O(0,0)$ and $Q(11,k)$: $OQ^2 = 11^2 + k^2 = 121 + k^2$.`],
+ ['Part (a) Step 3: Solve for k',String.raw`$121 + k^2 = 196 \implies k^2 = 75 \implies k = \sqrt{75} = 5\sqrt{3}$ (we take the positive root because $k>0$).`],
+ ['Part (b) Hint: the circle equation',String.raw`A circle with centre $(a,b)$ and radius $r$ has equation $(x-a)^2+(y-b)^2=r^2$.`],
+ ['Part (b) Working',String.raw`Centre $Q(11, 5\sqrt{3})$, radius $r=4$.<br><b>Equation:</b> $(x-11)^2 + (y-5\sqrt{3})^2 = 16$.`]]}];
+
+function stepper(host,steps){host.innerHTML=`<div class="steps space-y-2"></div><div class="ui flex gap-2 mt-3"><button class="next rounded-md bg-indigo-900 text-white px-4 py-2 text-sm">Show next step</button><button class="reset rounded-md border border-slate-300 px-4 py-2 text-sm">Start again</button></div>`;
+ let n=0;const box=host.querySelector('.steps'),btn=host.querySelector('.next');
+ btn.onclick=()=>{if(n>=steps.length)return;const st=steps[n++],h=st[0].startsWith('Hint')||/ Hint/.test(st[0]),el=document.createElement('div');
+  el.className='rounded border p-3 leading-relaxed '+(h?'bg-amber-50 border-amber-200':'bg-indigo-50 border-indigo-200');
+  el.innerHTML=`<div class="ui text-xs font-semibold ${h?'text-amber-800':'text-indigo-900'} mb-1">${st[0]}</div>${st[1]}`;
+  box.appendChild(el);ty(el);
+  if(n>=steps.length){btn.disabled=true;btn.classList.add('opacity-40')}};
+ host.querySelector('.reset').onclick=()=>{n=0;box.innerHTML='';btn.disabled=false;btn.classList.remove('opacity-40')}}
+
+$('#examples').insertAdjacentHTML('beforeend',EX.map((e,i)=>`<details class="bg-white rounded-lg border border-slate-200" data-ex="${i}"><summary class="ui flex items-center gap-3 p-4 font-semibold text-indigo-950"><span class="chev text-indigo-500"></span>${e.t}<span class="ml-auto text-xs font-normal text-slate-500">${e.m} marks</span></summary>
+<div class="px-5 pb-5"><div class="bg-slate-50 border border-slate-200 rounded p-3 mb-3 leading-relaxed">${e.q}</div><div class="stepper"></div></div></details>`).join(''));
+$$('#examples details').forEach(d=>stepper(d.querySelector('.stepper'),EX[+d.dataset.ex].s));
+
+/* ---------- Practice question generators ---------- */
 const gfun=(k,yr)=>x=>x<-1||x>8?NaN:(x<=2?k*(x-2):yr/6*(x-2));
 const gGraph=(k,yr)=>({c:[{f:gfun(k,yr),c:'#4338ca'}],x0:-1,x1:8,pts:[P(-1,-3*k,'(-1, '+(-3*k)+')'),P(2,0,'(2, 0)'),P(8,yr,'(8, '+yr+')')],segs:[]});
 const simp=n=>{let a=1,m=n;for(let d=Math.floor(Math.sqrt(n));d>1;d--)if(n%(d*d)===0){a=d;m=n/(d*d);break}return[a,m]};
@@ -287,198 +315,125 @@ const circG=(p,k,r)=>{const d=Math.hypot(p,k),th=Math.atan2(k,p)+Math.asin(r/d),
  const ring=[];for(let i=0;i<120;i++){const t1=2*Math.PI*i/120,t2=2*Math.PI*(i+1)/120;ring.push({x1:p+r*Math.cos(t1),y1:k+r*Math.sin(t1),x2:p+r*Math.cos(t2),y2:k+r*Math.sin(t2),c:'#4338ca',w:2.2})}
  return{c:[{f:x=>k+Math.sqrt(r*r-(x-p)*(x-p)),c:'rgba(0,0,0,0)'},{f:x=>k-Math.sqrt(r*r-(x-p)*(x-p)),c:'rgba(0,0,0,0)'}],x0:p-r,x1:p+r,
  pts:[P(0,0,'O'),P(T[0],T[1],'T'),P(p,k,'Q')],segs:ring.concat([{x1:0,y1:0,x2:T[0]*1.15,y2:T[1]*1.15,c:'#ea580c',w:2.5},{x1:p,y1:k,x2:T[0],y2:T[1],c:'#0f172a'},{x1:0,y1:0,x2:p,y2:k,c:'#64748b',d:1}])}};
-const EX=[
-{t:'Example 1 · Exam question 8: functions',m:9,q:String.raw`The function $f$ is defined by $f:x\to\dfrac{3-2x}{x-5}$, $x\in\mathbb{R}$, $x\ne5$.<br>(a) Write down the range of $f$. [1 mark]<br>(b) Find $f^{-1}(x)$. [3 marks]<br>The function $g$ has domain $-1\le x\le8$, and is linear from $(-1,-9)$ to $(2,0)$ and from $(2,0)$ to $(8,4)$.<br>Figure 4 shows a sketch of the graph of $y=g(x)$.${fig4()}(c) Write down the range of $g$. [1 mark]<br>(d) Find $gg(2)$. [2 marks]<br>(e) Find $fg(8)$. [2 marks]`,
- s:[['Hint for (a)',String.raw`Ask what value the output can never be. Rewrite the fraction by dividing: $3-2x=-2(x-5)-7$.`],
- ['Working for (a)',String.raw`$f(x)=-2-\frac{7}{x-5}$. The fraction $\frac{7}{x-5}$ is never 0, so $f(x)$ is never $-2$. Range: $f(x)\in\mathbb{R}$, $f(x)\ne-2$. (Do not say $f(x)\ne5$: that is the domain.)`],
- ['Hint for (b)',String.raw`Write $y=f(x)$, clear the fraction, collect the $x$ terms, factorise, then swap $y$ for $x$.`],
- ['Working for (b)',String.raw`$y(x-5)=3-2x$, so $xy-5y=3-2x$. Collect: $xy+2x=3+5y$. Factorise: $x(y+2)=3+5y$. So $x=\frac{3+5y}{y+2}$ and $f^{-1}(x)=\frac{5x+3}{x+2}$, $x\ne-2$. (Marks: M1 clear the fraction, M1 collect and factorise, A1.)`],
- ['Hint for (c)',String.raw`The range is about heights. Look at the lowest and highest points of the graph in Figure 4.`],
- ['Working for (c)',String.raw`The lowest point is $(-1,-9)$ and the highest is $(8,4)$. Range: $-9\le g(x)\le4$.${fig4({rng:1})}`],
- ['Hint for (d)',String.raw`$gg(2)$ means do $g$ twice. Start with $g(2)$, read it from the graph, then use $g$ again.`],
- ['Working for (d)',String.raw`$g(2)=0$. Now $g(0)$: $x=0$ is on the first line, from $(-1,-9)$ to $(2,0)$. Its gradient is $\frac{0-(-9)}{2-(-1)}=3$ and the graph crosses the $y$-axis at $-6$. So $g(0)=-6$ and $gg(2)=-6$.${fig4({ex:(X,Y)=>`<circle cx="${X(2)}" cy="${Y(0)}" r="5.5" fill="#c2410c"/><circle cx="${X(0)}" cy="${Y(-6)}" r="5.5" fill="#4338ca"/>`+stx(X(2)+10,Y(0)-10,'g(2) = 0',{c:'#c2410c',b:1,s:14,a:'start'})+stx(X(0)+46,Y(-6)+5,'g(0) = −6',{c:'#4338ca',b:1,s:14,a:'start'})})}`],
- ['Hint for (e)',String.raw`$fg(8)$ means $g$ first, then $f$.`],
- ['Working for (e)',String.raw`$g(8)=4$. Then $f(4)=\frac{3-2(4)}{4-5}=\frac{-5}{-1}=5$. So $fg(8)=5$.`]]},
-{t:'Example 2 · Exam question 5: circle and tangent',m:5,q:String.raw`${fig3()}Figure 3 shows a circle $C$ with centre $Q$ and radius 4 and the point $T$ which lies on $C$.<br>The tangent to $C$ at the point $T$ passes through the origin $O$ and $OT=6\sqrt5$.<br>Given that the coordinates of $Q$ are $(11,k)$, where $k$ is a positive constant,<br>(a) find the exact value of $k$, [3 marks]<br>(b) find an equation for $C$. [2 marks]`,
- s:[['Hint for (a)',String.raw`The note on the paper says "think back to circle theorems". The tangent is at right angles to the radius $QT$. So triangle $OTQ$ has a right angle at $T$.`],
- ['Working for (a): use Pythagoras',String.raw`$OQ^2=OT^2+TQ^2=(6\sqrt5)^2+4^2=180+16=196$. (M1)${fig3({tri:1})}`],
- ['Working for (a): use the coordinates',String.raw`$Q$ is $(11,k)$ and $O$ is $(0,0)$, so $OQ^2=11^2+k^2=121+k^2$. Then $121+k^2=196$, so $k^2=75$. (M1)`],
- ['Working for (a): finish',String.raw`$k=\sqrt{75}=\sqrt{25\times3}=5\sqrt3$. We take the positive root because $k$ is positive. (A1)`],
- ['Hint for (b)',String.raw`Use $(x-a)^2+(y-b)^2=r^2$ with the centre $(11,5\sqrt3)$ and radius 4.`],
- ['Working for (b)',String.raw`$(x-11)^2+(y-5\sqrt3)^2=16$. Watch the signs: both are minus. (B1 for the centre, B1 for $r^2=16$.)`]]}];
-function stepper(host,steps){host.innerHTML=`<div class="steps space-y-2"></div><div class="ui flex gap-2 mt-3"><button class="next rounded-md bg-indigo-900 text-white px-4 py-2 text-sm">Show next step</button><button class="reset rounded-md border border-slate-300 px-4 py-2 text-sm">Start again</button></div>`;
- let n=0;const box=host.querySelector('.steps'),btn=host.querySelector('.next');
- btn.onclick=()=>{if(n>=steps.length)return;const st=steps[n++],h=st[0].startsWith('Hint'),el=document.createElement('div');
-  el.className='rounded border p-3 leading-relaxed '+(h?'bg-amber-50 border-amber-200':'bg-indigo-50 border-indigo-200');
-  el.innerHTML=`<div class="ui text-xs font-semibold ${h?'text-amber-800':'text-indigo-900'} mb-1">${st[0]}</div>${st[1]}`;
-  box.appendChild(el);if(st[2]){const cv=document.createElement('canvas');cv.className='mt-3';cv.setAttribute('role','img');cv.setAttribute('aria-label','Graph for this step: '+st[0]);el.appendChild(cv);ty(el);st[2](cv)}else ty(el);
-  if(n>=steps.length){btn.disabled=true;btn.classList.add('opacity-40')}};
- host.querySelector('.reset').onclick=()=>{n=0;box.innerHTML='';btn.disabled=false;btn.classList.remove('opacity-40')}}
-$('#examples').insertAdjacentHTML('beforeend',EX.map((e,i)=>`<details class="bg-white rounded-lg border border-slate-200" data-ex="${i}"><summary class="ui flex items-center gap-3 p-4 font-semibold text-indigo-950"><span class="chev text-indigo-500">▶</span>${e.t}<span class="ml-auto text-xs font-normal text-slate-500">${e.m} marks</span></summary>
-<div class="px-5 pb-5"><div class="bg-slate-50 border border-slate-200 rounded p-3 mb-3 leading-relaxed">${e.q}</div><div class="stepper"></div></div></details>`).join(''));
-$$('#examples details').forEach(d=>stepper(d.querySelector('.stepper'),EX[+d.dataset.ex].s));
-
 
 const GEN={t1:[],t2:[],t3:[],exam:[]};
-const bk=(a,b)=>'('+lin(a,b)+')';
-// ---- Fundamental ----
-GEN.t1.push(()=>{const a=pick([2,3,4]),b=pick([-3,-1,1,2,5]),c=pick([-2,-1,1,3]),x0=pick([1,2,3]),v=a*(x0*x0+c)+b,w=Math.pow(a*x0+b,2)+c;
- return{tp:'comp',q:String.raw`$f(x)=${lin(a,b)}$ and $g(x)=x^2${sg(c)}$. Find $fg(${x0})$.`,ans:[v],at:String(v),diag:u=>cl(u[0],w)?String.raw`You did $f$ first. $fg(${x0})$ means do $g$ first, then $f$.`:null,
- steps:[String.raw`$fg$ means $g$ first. Work out $g(${x0})$, then put the answer into $f$.`,String.raw`$g(${x0})=${x0*x0+c}$.`,String.raw`$f(${x0*x0+c})=${a}\times${x0*x0+c}${sg(b)}=${v}$.`]}});
-GEN.t1.push(()=>{const k=pick([2,3,4]),yr=pick([2,4,6]),lo=-3*k,O=[[String.raw`$${lo}\le g(x)\le${yr}$`,null],[String.raw`$-1\le g(x)\le8$`,'Those are the <b>domain</b> ($x$ values), not the range.'],[String.raw`$0\le g(x)\le${yr}$`,'The graph also goes below the $x$-axis.'],[String.raw`$${lo}\le g(x)\le0$`,'The graph also goes above the $x$-axis.']],ch=shuffle([0,1,2,3]);
- return{tp:'range',q:String.raw`The function $g$ has domain $-1\le x\le8$. Its graph is shown. Which is the range of $g$?`,qgr:gGraph(k,yr),qalt:'Graph of g, linear from (-1,'+lo+') to (2,0) and from (2,0) to (8,'+yr+').',mc:ch.map(i=>O[i][0]),ci:ch.indexOf(0),mcwhy:ch.map(i=>O[i][1]),at:String.raw`${lo}\le g(x)\le${yr}`,
- steps:[String.raw`Range means heights ($y$ values). Find the lowest and highest points on the graph.`,String.raw`Lowest: $(-1,${lo})$. Highest: $(8,${yr})$. So $${lo}\le g(x)\le${yr}$.`]}});
-GEN.t1.push(()=>{const a=pick([2,3,4,5]),b=pick([-5,-3,-2,2,3,4,7]);
- return{tp:'inv',q:String.raw`$f(x)=${lin(a,b)}$. Find $f^{-1}(x)$. Type it like (x-3)/2.`,fn:x=>(x-b)/a,lo:0,at:String.raw`\frac{x${sg(-b)}}{${a}}`,
- alts:[{fn:x=>(x+b)/a,msg:'Check the sign. To undo adding a number, subtract it.'},{fn:x=>x/a-b,msg:'Divide the <b>whole</b> of $y-b$ by the coefficient, not just the $x$ part.'}],
- steps:[String.raw`Write $y=${lin(a,b)}$ and make $x$ the subject.`,String.raw`$y${sg(-b)}=${a}x$, so $x=\frac{y${sg(-b)}}{${a}}$.`,String.raw`Swap $y$ for $x$: $f^{-1}(x)=\frac{x${sg(-b)}}{${a}}$.`]}});
-GEN.t1.push(()=>{const a=pick([1,2,3,4,5]),c=pick([-4,-3,-2,2,3,5]),r=pick([3,4,5,6,7]);
- return{tp:'circ',q:String.raw`A circle has equation $(x${sg(-a)})^2+(y${sg(-c)})^2=${r*r}$.`,parts:[
- {lab:'(a)',txt:'Write down the $x$-coordinate of the centre.',marks:1,ans:[a],at:String(a),ms:[{c:'B1',d:`$x=${a}$.`,auto:1}]},
- {lab:'(b)',txt:'Write down the $y$-coordinate of the centre.',marks:1,ans:[c],at:String(c),dg:u=>cl(u[0],-c)?'The sign is flipped. $(y-b)^2$ means the centre has $y$-coordinate $b$.':null,ms:[{c:'B1',d:`$y=${c}$.`,auto:1}]},
- {lab:'(c)',txt:'Find the radius.',marks:1,ans:[r],at:String(r),dg:u=>cl(u[0],r*r)?'That is $r^2$. Take the square root.':null,ms:[{c:'B1',d:`$r=\\sqrt{${r*r}}=${r}$.`,auto:1}]}],
- steps:[String.raw`Compare with $(x-a)^2+(y-b)^2=r^2$, where the centre is $(a,b)$.`,String.raw`The centre is $(${a},${c})$. The right-hand side is $r^2=${r*r}$, so $r=${r}$.`]}});
-// ---- Intermediate ----
-GEN.t2.push(()=>{const a=pick([-3,-2,-1,2,3,4]),b=pick([1,2,3,5,7]),c=pick([1,2,3,4,5,6]);if(b+a*c===0)return GEN.t2[0]();
- return{tp:'range',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x${sg(-c)}}$, $x\ne${c}$. The range of $f$ is all real numbers except one value. Find that value.`,ans:[a],at:String(a),diag:u=>cl(u[0],c)?String.raw`That is the excluded <b>$x$ value</b> (the domain). The range exclusion is the ratio of the $x$ coefficients.`:null,
- steps:[String.raw`Divide: ${lin(a,b)} $=${a}(x${sg(-c)})${sg(b+a*c)}$.`,String.raw`So $f(x)=${a}${sg(b+a*c)}\div(x${sg(-c)})$, written as $${a}+\frac{${b+a*c}}{x${sg(-c)}}$. The fraction is never 0.`,String.raw`So $f(x)$ is never $${a}$.`]}});
-GEN.t2.push(()=>{const a=pick([-3,-2,-1,2,3]),b=pick([1,2,3,4,5]),c=pick([1,2,3,4,5,6]);if(b+a*c===0)return GEN.t2[1]();
- return{tp:'inv',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x${sg(-c)}}$. Find $f^{-1}(x)$. Type it like (5x+3)/(x+2).`,fn:x=>(c*x+b)/(x-a),lo:0,at:String.raw`\frac{${lin(c,b)}}{x${sg(-a)}}`,
- alts:[{fn:x=>(c*x+b)/(x+a),msg:'Check the sign in the denominator when you factorise.'}],
- steps:[String.raw`Write $y=\frac{${lin(a,b)}}{x${sg(-c)}}$, so $y(x${sg(-c)})=${lin(a,b)}$.`,String.raw`Expand and collect the $x$ terms: $xy${sg(-a)}x=${c}y${sg(b)}$. Factorise: $x(y${sg(-a)})=${c}y${sg(b)}$.`,String.raw`So $f^{-1}(x)=\frac{${lin(c,b)}}{x${sg(-a)}}$.`]}});
-GEN.t2.push(()=>{const a=pick([2,3,4]),b=pick([-3,-1,2,5]),c=pick([-1,1,2,3]);
- return{tp:'comp',q:String.raw`$f(x)=${lin(a,b)}$ and $g(x)=x^2${sg(c)}$. Find $fg(x)$. Type it like 2x^2+5.`,fn:x=>a*(x*x+c)+b,lo:0,at:String.raw`${a}x^2${sg(a*c+b)}`,
- alts:[{fn:x=>Math.pow(a*x+b,2)+c,msg:String.raw`That is $gf(x)$. $fg(x)$ means do $g$ first, then $f$.`}],
- steps:[String.raw`$fg(x)=f(g(x))$. Replace the $x$ in $f$ with $g(x)=x^2${sg(c)}$.`,String.raw`$fg(x)=${a}(x^2${sg(c)})${sg(b)}=${a}x^2${sg(a*c+b)}$.`]}});
-GEN.t2.push(()=>{const [u,v,r]=pick([[3,4,5],[5,12,13],[6,8,10],[8,6,10]]),a=pick([1,2,3,4]),b=pick([1,2,3].filter(t=>t<v)),k=b+v;
- return{tp:'circ',q:String.raw`A circle has centre $(${a},${b})$ and radius ${r}. The point $(${a+u},k)$ lies on the circle and $k>0$. Find $k$.`,ans:[k],at:String(k),
- steps:[String.raw`Equation: $(x-${a})^2+(y-${b})^2=${r*r}$. Substitute $x=${a+u}$.`,String.raw`$${u*u}+(k-${b})^2=${r*r}$, so $(k-${b})^2=${v*v}$ and $k-${b}=\pm${v}$.`,String.raw`$k=${b+v}$ or $k=${b-v}$. Since $k>0$, $k=${k}$.`]}});
-// ---- Exam mastery ----
-GEN.t3.push(()=>{const k=pick([2,3,4]),yr=pick([2,4,6]),f=x=>(3-2*x)/(x-5),a=-2*k,b=f(yr);
- return{tp:'comp',q:String.raw`$f(x)=\dfrac{3-2x}{x-5}$, $x\ne5$. The graph of $y=g(x)$, with domain $-1\le x\le8$, is made of two straight lines. Use the graph to find the values.`,qgr:gGraph(k,yr),qalt:'Graph of g, linear from (-1,'+(-3*k)+') to (2,0) and from (2,0) to (8,'+yr+').',parts:[
- {lab:'(a)',txt:String.raw`Find $gg(2)$.`,marks:2,ans:[a],at:String(a),ms:[{c:'M1',d:'Finds $g(2)=0$.'},{c:'A1',d:`$g(0)=${a}$.`,auto:1}]},
- {lab:'(b)',txt:String.raw`Find $fg(8)$.`,marks:2,ans:[b],at:F(b),ms:[{c:'M1',d:`Finds $g(8)=${yr}$.`},{c:'A1',d:`$f(${yr})=${F(b)}$.`,auto:1}]}],
- steps:[String.raw`<b>(a)</b> $g(2)=0$. The first line goes through $(-1,${-3*k})$ and $(2,0)$, so its gradient is ${k} and $g(x)=${k}(x-2)$.`,String.raw`$gg(2)=g(0)=${k}(0-2)=${a}$.`,String.raw`<b>(b)</b> $g(8)=${yr}$, then $f(${yr})=\frac{3-${2*yr}}{${yr}-5}=${F(b)}$.`]}});
-GEN.t3.push(()=>{const a=pick([-3,-2,-1]),b=pick([1,2,3,4]),c=pick([3,5,6]),x0=pick([0,1,3]),v=(c*x0+b)/(x0-a);
- return{tp:'inv',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x-${c}}$, $x\ne${c}$. Find the exact value of $f^{-1}(${x0})$. (Fractions such as 3/4 are fine.)`,ans:[v],at:F(v),
- steps:[String.raw`First find $f^{-1}(x)$: the inverse of $\frac{ax+b}{x-c}$ is $\frac{cx+b}{x-a}$, here $\frac{${lin(c,b)}}{x${sg(-a)}}$.`,String.raw`Now put $x=${x0}$: $\frac{${c*x0+b}}{${x0-a}}=${F(v)}$.`]}});
-GEN.t3.push(()=>{const [ot,r,oq]=pick([[12,5,13],[8,6,10],[4,3,5],[12,9,15],[15,8,17]]),p=pick([r,ot]),k=Math.sqrt(oq*oq-p*p);
- return{tp:'circ',q:String.raw`A circle $C$ has centre $Q(${p},k)$ and radius ${r}, where $k>0$. The tangent to $C$ at $T$ passes through the origin $O$ and $OT=${ot}$.`,qgr:circG(p,k,r),qalt:'Circle with centre Q, a tangent from the origin O touching at T, and radius QT.',parts:[
- {lab:'(a)',txt:'Find $k$.',marks:3,ans:[k],at:String(k),ms:[{c:'M1',d:'Right angle at $T$, so $OQ^2=OT^2+r^2$.'},{c:'M1',d:`$${p}^2+k^2=${oq*oq}$.`},{c:'A1',d:`$k=${k}$.`,auto:1}]},
- {lab:'(b)',txt:String.raw`The equation of $C$ is $(x-${p})^2+(y-k)^2=R$. Find $R$.`,marks:1,ans:[r*r],at:String(r*r),dg:u=>cl(u[0],r)?'$R$ is the radius <b>squared</b>.':null,ms:[{c:'B1',d:`$R=${r}^2=${r*r}$.`,auto:1}]}],
- steps:[String.raw`The tangent is at $90^\circ$ to the radius, so triangle $OTQ$ has a right angle at $T$. Then $OQ^2=OT^2+TQ^2=${ot*ot}+${r*r}=${oq*oq}$.`,String.raw`Also $OQ^2=${p}^2+k^2$, so $k^2=${oq*oq}-${p*p}=${k*k}$ and $k=${k}$.`,String.raw`$R=r^2=${r*r}$.`]}});
-// ---- Exam style ----
-GEN.exam.push(()=>{const k=pick([2,3,4]),yr=pick([2,4,6]),a=pick([-3,-2,-1]),b=pick([2,3,4]),c=pick([3,5]),f=x=>(a*x+b)/(x-c),w=f(yr);
- return{tp:'inv',q:String.raw`The function $f$ is defined by $f:x\to\dfrac{${lin(a,b)}}{x-${c}}$, $x\in\mathbb{R}$, $x\ne${c}$. The function $g$ has domain $-1\le x\le8$ and is linear from $(-1,${-3*k})$ to $(2,0)$ and from $(2,0)$ to $(8,${yr})$, as shown.`,qgr:gGraph(k,yr),qalt:'Graph of g, linear from (-1,'+(-3*k)+') to (2,0) and from (2,0) to (8,'+yr+').',parts:[
- {lab:'(a)',txt:String.raw`The range of $f$ is all real numbers except one value. Find it.`,marks:1,ans:[a],at:String(a),ms:[{c:'B1',d:`$f(x)\\ne${a}$.`,auto:1}]},
- {lab:'(b)',txt:String.raw`Find $f^{-1}(x)$. Type it like (5x+3)/(x+2).`,marks:3,fn:x=>(c*x+b)/(x-a),lo:0,at:String.raw`\frac{${lin(c,b)}}{x${sg(-a)}}`,ms:[{c:'M1',d:'Clears the fraction.'},{c:'M1',d:'Collects the $x$ terms and factorises.'},{c:'A1',d:'Correct $f^{-1}(x)$.',auto:1}]},
- {lab:'(c)',txt:String.raw`Find $gg(2)$.`,marks:2,ans:[-2*k],at:String(-2*k),ms:[{c:'M1',d:'$g(2)=0$.'},{c:'A1',d:`$g(0)=${-2*k}$.`,auto:1}]},
- {lab:'(d)',txt:String.raw`Find $fg(8)$.`,marks:2,ans:[w],at:F(w),ms:[{c:'M1',d:`$g(8)=${yr}$.`},{c:'A1',d:`$f(${yr})=${F(w)}$.`,auto:1}]}],
- steps:[String.raw`<b>(a)</b> Divide the top by $(x-${c})$: the excluded value is $${a}$.`,String.raw`<b>(b)</b> $y(x-${c})=${lin(a,b)}$, so $xy-${c}y=${lin(a,b)}$. Collect and factorise: $x(y${sg(-a)})=${c}y${sg(b)}$. So $f^{-1}(x)=\frac{${lin(c,b)}}{x${sg(-a)}}$.`,String.raw`<b>(c)</b> $g(2)=0$, $g(0)=${-2*k}$, so $gg(2)=${-2*k}$.`,String.raw`<b>(d)</b> $g(8)=${yr}$ and $f(${yr})=${F(w)}$.`]}});
-GEN.exam.push(()=>{const p=pick([8,9,10,11,12]),r=pick([3,4,5]),k2=pick([12,18,20,27,45,48,50,75,80]),ot2=p*p+k2-r*r,[oa,om]=simp(ot2),[ka,km]=simp(k2),K=Math.sqrt(k2);
- return{tp:'circ',q:String.raw`A circle $C$ has centre $Q$ and radius ${r}. The tangent to $C$ at the point $T$ passes through the origin $O$ and $OT=${sqt(oa,om)}$. The coordinates of $Q$ are $(${p},k)$, where $k$ is a positive constant.`,qgr:circG(p,K,r),qalt:'Circle with centre Q, a tangent from the origin O touching at T, and the radius QT.',parts:[
- {lab:'(a)',txt:String.raw`Find the exact value of $k$. Type it like 5sqrt(3).`,marks:3,cv:K,exact:true,at:sqt(ka,km),ms:[{c:'M1',d:'Right angle at $T$, so $OQ^2=OT^2+r^2$.'},{c:'M1',d:`$${p}^2+k^2=${ot2+r*r}$.`},{c:'A1',d:`$k=${sqt(ka,km)}$.`,auto:1}]},
- {lab:'(b)',txt:String.raw`The equation of $C$ is $(x-${p})^2+(y-k)^2=R$. Find $R$.`,marks:1,ans:[r*r],at:String(r*r),ms:[{c:'B1',d:`$R=${r*r}$.`,auto:1}]}],
- steps:[String.raw`The tangent is at $90^\circ$ to the radius, so $OQ^2=OT^2+r^2=${ot2}+${r*r}=${ot2+r*r}$.`,String.raw`$OQ^2=${p}^2+k^2$, so $k^2=${ot2+r*r}-${p*p}=${k2}$. Take the positive root: $k=${sqt(ka,km)}$.`,String.raw`$R=r^2=${r*r}$.`]}});
-const TOPICS={range:'Domain and range',inv:'Inverse functions',comp:'Composite functions',circ:'Circles and tangents'};
-const TIPS={range:'Range is about y values. Look at the lowest and highest heights, or find the value a fraction can never equal.',inv:'Write y equals f of x, make x the subject (collect x terms and factorise), then swap y for x.',comp:'fg means g first, then f. Work from the inside out.',circ:'The tangent is at right angles to the radius. Draw the right-angled triangle and use Pythagoras.'};
-const SPOT=[
-()=>({tp:'comp',q:String.raw`$f(x)=2x+1$ and $g(x)=x^2$. Find $fg(3)$. A student wrote:`,lines:[String.raw`$f(3)=2(3)+1=7$.`,String.raw`$g(7)=49$.`,String.raw`So $fg(3)=49$.`],bad:0,why:String.raw`$fg$ means do $g$ first, then $f$. The student did $f$ first, which is $gf(3)$.`,fix:String.raw`$g(3)=9$, then $f(9)=19$. So $fg(3)=19$.`}),
-()=>({tp:'range',q:String.raw`$g$ has domain $-1\le x\le8$. The lowest point on its graph is $(-1,-9)$ and the highest is $(8,4)$. A student wrote:`,lines:[String.raw`The range is the lowest to highest $x$ value.`,String.raw`So the range is $-1\le g(x)\le8$.`],bad:0,why:String.raw`The range is about the <b>$y$ values</b> (heights). The student used the domain.`,fix:String.raw`Range: $-9\le g(x)\le4$.`}),
-()=>({tp:'inv',q:String.raw`Find $f^{-1}(x)$ for $f(x)=\dfrac{x+1}{x-2}$. A student wrote:`,lines:[String.raw`$y=\frac{x+1}{x-2}$, so $y(x-2)=x+1$ and $xy-2y=x+1$.`,String.raw`Collect the $x$ terms: $xy+x=2y+1$.`,String.raw`$x(y+1)=2y+1$, so $f^{-1}(x)=\frac{2x+1}{x+1}$.`],bad:1,why:String.raw`Subtracting $x$ from both sides gives $xy-x$, not $xy+x$. It was a sign slip.`,fix:String.raw`$xy-x=2y+1$, so $x(y-1)=2y+1$ and $f^{-1}(x)=\frac{2x+1}{x-1}$.`}),
-()=>({tp:'range',q:String.raw`$f(x)=\dfrac{3-2x}{x-5}$, $x\ne5$. A student wrote:`,lines:[String.raw`$x$ cannot be 5, so the range is $f(x)\ne5$.`],bad:0,why:String.raw`$x\ne5$ is about the <b>domain</b>. The range exclusion comes from rewriting $f(x)=-2-\frac{7}{x-5}$, which is never $-2$.`,fix:String.raw`Range: $f(x)\in\mathbb{R}$, $f(x)\ne-2$.`}),
-()=>({tp:'circ',q:String.raw`A tangent from the origin touches circle $C$ (centre $Q(11,k)$, radius 4) at $T$, with $OT=6\sqrt5$. A student wrote:`,lines:[String.raw`The triangle $OTQ$ has a right angle at $O$.`,String.raw`So $OT^2+OQ^2=TQ^2$, which gives $180+OQ^2=16$.`],bad:0,why:String.raw`The tangent is at right angles to the radius, so the right angle is at $T$, not at $O$.`,fix:String.raw`$OQ^2=OT^2+TQ^2=180+16=196$, so $121+k^2=196$ and $k=5\sqrt3$.`}),
-()=>({tp:'circ',q:String.raw`A circle has centre $(11,5\sqrt3)$ and radius 4. A student wrote its equation as:`,lines:[String.raw`$(x+11)^2+(y+5\sqrt3)^2=16$.`],bad:0,why:String.raw`The equation is $(x-a)^2+(y-b)^2=r^2$, so the signs are minus when the centre coordinates are positive.`,fix:String.raw`$(x-11)^2+(y-5\sqrt3)^2=16$.`})];
 
-/* ---------- topics, saved progress ---------- */
-const SK='fm9ma0-fncirc-v1';let S={sc:0,st:0,best:0,n:0,ok:0,tp:{},sl:{},pr:{n:0,ok:0}};
+GEN.t1.push(()=>{const a=pick([2,3,4]),b=pick([-3,-1,1,2,5]),c=pick([-2,-1,1,3]),x0=pick([1,2,3]),v=a*(x0*x0+c)+b;
+ return{tp:'comp',q:String.raw`$f(x)=${lin(a,b)}$ and $g(x)=x^2${sg(c)}$. Find $fg(${x0})$.`,ans:[v],at:String(v),hint:'fg(x) means do g first, then put the answer into f.',
+ steps:[String.raw`Work out $g(${x0})=${x0*x0+c}$.`,String.raw`Put that into $f$: $f(${x0*x0+c})=${a}\times(${x0*x0+c})${sg(b)}=${v}$.`]}});
+
+GEN.t1.push(()=>{const a=pick([2,3,4,5]),b=pick([-5,-3,-2,2,3,4,7]);
+ return{tp:'inv',q:String.raw`$f(x)=${lin(a,b)}$. Find $f^{-1}(x)$. Type it as (x-b)/a with your own numbers.`,fn:x=>(x-b)/a,at:String.raw`\frac{x${sg(-b)}}{${a}}`,hint:'Write y = the expression, then get x on its own. Finally swap y for x.',
+ steps:[String.raw`Let $y=${lin(a,b)} \implies y${sg(-b)}=${a}x \implies x=\frac{y${sg(-b)}}{${a}}$.`,String.raw`Swap $y$ for $x$: $f^{-1}(x)=\frac{x${sg(-b)}}{${a}}$.`]}});
+
+GEN.t2.push(()=>{const a=pick([-3,-2,-1,2,3,4]),b=pick([1,2,3,5,7]),c=pick([1,2,3,4,5,6]);if(b+a*c===0)return GEN.t2[0]();
+ return{tp:'range',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x${sg(-c)}}$, $x\ne${c}$. Find the one number that $f(x)$ can never equal (the value missing from the range).`,ans:[a],at:String(a),hint:'Split the fraction into a number plus a fraction that can never be zero.',
+ steps:[String.raw`Rewrite $f(x)=${a}+\frac{${b+a*c}}{x${sg(-c)}}$.`,String.raw`The fraction is never zero, so $f(x)\ne${a}$.`]}});
+
+GEN.t2.push(()=>{const a=pick([-3,-2,-1,2,3]),b=pick([1,2,3,4,5]),c=pick([1,2,3,4,5,6]);if(b+a*c===0)return GEN.t2[1]();
+ return{tp:'inv',q:String.raw`$f(x)=\dfrac{${lin(a,b)}}{x${sg(-c)}}$. Find $f^{-1}(x)$. Type it like (5x+3)/(x+2).`,fn:x=>(c*x+b)/(x-a),at:String.raw`\frac{${lin(c,b)}}{x${sg(-a)}}`,hint:'Write y =, multiply both sides by the bottom, gather the x terms, then take x out as a common factor.',
+ steps:[String.raw`$y(x${sg(-c)})=${lin(a,b)} \implies xy${sg(-c)}y=${lin(a,b)}$.`,String.raw`Gather the $x$ terms: $x(y${sg(-a)})=${c}y${sg(b)} \implies x=\frac{${lin(c,b)}}{y${sg(-a)}}$.`]}});
+
+GEN.t3.push(()=>{const k=pick([2,3,4]),yr=pick([2,4,6]),f=x=>(3-2*x)/(x-5),a=-2*k,b=f(yr);
+ return{tp:'comp',q:String.raw`$f(x)=\dfrac{3-2x}{x-5}$. The graph of $g(x)$ (for $-1\le x\le8$) is made of two straight pieces.`,qgr:gGraph(k,yr),hint:'Work out the inside bracket first, reading values off the graph.',parts:[
+ {lab:'(a)',txt:String.raw`Find $gg(2)$.`,marks:2,ans:[a],at:String(a),ms:[{c:'M1',d:'$g(2)=0$.'},{c:'A1',d:`$g(0)=${a}$.`}]},
+ {lab:'(b)',txt:String.raw`Find $fg(8)$.`,marks:2,ans:[b],at:F(b),ms:[{c:'M1',d:`$g(8)=${yr}$.`},{c:'A1',d:`$f(${yr})=${F(b)}$.`}]}],
+ steps:[String.raw`<b>(a)</b> $g(2)=0 \implies g(0)=${a}$.`,String.raw`<b>(b)</b> $g(8)=${yr} \implies f(${yr})=${F(b)}$.`]}});
+
+GEN.exam.push(()=>{const p=pick([8,9,10,11,12]),r=pick([3,4,5]),k2=pick([12,18,20,27,45,48,50,75,80]),ot2=p*p+k2-r*r,[oa,om]=simp(ot2),[ka,km]=simp(k2),K=Math.sqrt(k2);
+ return{tp:'circ',q:String.raw`Circle $C$ has centre $Q(${p},k)$ where $k>0$, and radius ${r}. The tangent from $O$ touches $C$ at $T$, and $OT=${sqt(oa,om)}$.`,qgr:circG(p,K,r),hint:'The tangent meets the radius at 90°, so triangle OTQ is right-angled at T.',parts:[
+ {lab:'(a)',txt:String.raw`Find the exact value of $k$. Type it like 5√3 or 5sqrt(3).`,marks:3,cv:K,exact:true,at:sqt(ka,km),ms:[{c:'M1',d:'Right-angled triangle $OTQ \implies OQ^2=OT^2+r^2$.'},{c:'M1',d:`$${p}^2+k^2=${ot2+r*r}$.`},{c:'A1',d:`$k=${sqt(ka,km)}$.`}]},
+ {lab:'(b)',txt:String.raw`The equation of $C$ is $(x-${p})^2+(y-k)^2=R$. Find $R$.`,marks:1,ans:[r*r],at:String(r*r),ms:[{c:'B1',d:`$R=${r*r}$.`}]}],
+ steps:[String.raw`Right angle at $T$: $OQ^2 = (${sqt(oa,om)})^2 + ${r}^2 = ${ot2+r*r}$.`,String.raw`$${p}^2+k^2 = ${ot2+r*r} \implies k^2=${k2} \implies k=${sqt(ka,km)}$.`,String.raw`$R=r^2=${r*r}$.`]}});
+
+const TOPICS={range:'Domain and range',inv:'Inverse functions',comp:'Composite functions',circ:'Circles and tangents'};
+const tiersFor=tp=>Object.keys(GEN).filter(t=>GEN[t].some(g=>g().tp===tp));
+
+/* ---------- Spot the mistake ---------- */
+const SPOT=[
+()=>({tp:'comp',q:String.raw`$f(x)=2x+1$ and $g(x)=x^2$. Find $fg(3)$. A student wrote:`,lines:[String.raw`$fg(3)$ means $f(g(3))$.`,String.raw`$f(3)=2(3)+1=7$.`,String.raw`$g(7)=49$, so $fg(3)=49$.`],bad:1,why:String.raw`$fg(3)$ means work out $g(3)$ first, then put the answer into $f$. The student did $f$ first.`,fix:String.raw`$g(3)=9 \implies f(9)=2(9)+1=19$.`}),
+()=>({tp:'range',q:String.raw`$f(x)=\dfrac{3-2x}{x-5}$, $x\ne5$. A student wrote:`,lines:[String.raw`The bottom of the fraction cannot be $0$, so $x\ne5$.`,String.raw`So the range is $f(x)\ne5$.`],bad:1,why:String.raw`$x\ne5$ limits what can go <b>in</b> (the domain). The range is about what comes <b>out</b>: the graph never reaches the flat line $y=-2$.`,fix:String.raw`Range: $f(x)\in\mathbb{R}, f(x)\ne -2$.`}),
+()=>({tp:'circ',q:String.raw`Circle centre $Q(11,k)$, radius 4, tangent $OT=6\sqrt{5}$. A student wrote:`,lines:[String.raw`$OT$ is a tangent and $QT$ is a radius, with $QT=4$.`,String.raw`Triangle $OTQ$ has a right angle at $O$.`,String.raw`So $OT^2+OQ^2=TQ^2 \implies 180+OQ^2=16$.`],bad:1,why:String.raw`The tangent meets the radius at $90^\circ$ at the point $T$, not at $O$. The longest side is $OQ$.`,fix:String.raw`$OQ^2 = OT^2 + TQ^2 = 180 + 16 = 196 \implies k=5\sqrt{3}$.`})];
+
+/* ---------- Saved progress ---------- */
+const SK='fm9ma0-fncirc-v3';let S={sc:0,st:0,best:0,n:0,ok:0,tp:{}};
 try{const j=JSON.parse(localStorage.getItem(SK)||'null');if(j&&typeof j.sc==='number')S=Object.assign(S,j)}catch(e){}
 const save=()=>{try{localStorage.setItem(SK,JSON.stringify(S))}catch(e){}};
 function stats(){$('#sScore').textContent=S.sc;$('#sStreak').textContent=S.st;$('#sBest').textContent=S.best;$('#sAcc').textContent=S.n?Math.round(100*S.ok/S.n)+'%':'–'}
-function record(tp,right,pts,extra,slip){S.n++;const t=S.tp[tp]||(S.tp[tp]={n:0,ok:0});t.n++;if(right){S.ok++;t.ok++;S.st++;S.best=Math.max(S.best,S.st);S.sc+=pts+(S.st>=3?1:0)}else{S.st=0;S.sc+=extra||0;if(slip){S.sl=S.sl||{};const k=String(slip).replace(/<[^>]+>/g,'').replace(/\$/g,'').slice(0,110);S.sl[k]=(S.sl[k]||0)+1}}save();stats();report()}
-function summary(){const r=Object.entries(S.tp).map(([k,v])=>`${TOPICS[k]||k}: ${v.ok}/${v.n}`).join('; ');return `9MA0 Functions and circles practice. Score ${S.sc}, best streak ${S.best}, ${S.n} questions, accuracy ${S.n?Math.round(100*S.ok/S.n):0}%. By topic: ${r||'none yet'}.${S.pr&&S.pr.n?` Predictions ${S.pr.ok}/${S.pr.n}.`:''}`}
-function report(){const e=$('#rep');if(!e)return;const sl=Object.entries(S.sl||{}).sort((a,b)=>b[1]-a[1]).slice(0,3),slipsHTML=(sl.length?`<div class="bg-slate-50 border border-slate-200 rounded p-3"><b>Slips you keep making:</b><ul class="list-disc ml-5 mt-1">${sl.map(x=>`<li>${x[0]} <span class="text-slate-500">(${x[1]}×)</span></li>`).join('')}</ul></div>`:'')+(S.pr&&S.pr.n?`<p class="text-slate-600">Slider predictions: ${S.pr.ok} of ${S.pr.n} correct.</p>`:''),was=e.querySelector('details')&&e.querySelector('details').open,rows=Object.entries(S.tp).filter(([k,v])=>v.n);let weak=null;
- rows.forEach(([k,v])=>{if(v.n>=2&&(!weak||v.ok/v.n<S.tp[weak].ok/S.tp[weak].n))weak=k});
- e.innerHTML=`<details class="bg-white rounded-lg border border-slate-200 mt-4" ${was?'open':''}><summary class="p-4 font-semibold text-indigo-950 flex items-center gap-2"><span class="chev text-indigo-500">▶</span>My progress and weak spots</summary><div class="px-5 pb-5 space-y-2 text-sm">${rows.length?rows.map(([k,v])=>{const pc=Math.round(100*v.ok/v.n);return `<div><div class="flex justify-between"><span>${TOPICS[k]||k}</span><span>${v.ok}/${v.n} (${pc}%)</span></div><div class="h-2 bg-slate-200 rounded"><div class="h-2 rounded ${pc>=70?'bg-emerald-500':pc>=40?'bg-amber-500':'bg-red-500'}" style="width:${pc}%"></div></div></div>`}).join(''):'<p>Answer some questions and your results will appear here.</p>'}${weak?`<p class="bg-amber-50 border border-amber-200 rounded p-3"><b>Revise next: ${TOPICS[weak]}.</b> ${TIPS[weak]}</p>`:''}${slipsHTML}<div class="flex flex-wrap gap-2 pt-2"><button id="cp" class="rounded-md bg-indigo-900 text-white px-4 py-2">Copy summary to share</button><button id="rs" class="rounded-md border border-slate-300 px-4 py-2">Reset progress</button></div><textarea id="sm" readonly aria-label="Progress summary" class="hidden w-full border border-slate-300 rounded p-2 text-xs" rows="3"></textarea></div></details>`;
- $('#cp').onclick=async()=>{const t=$('#sm');t.value=summary();t.classList.remove('hidden');t.select();try{await navigator.clipboard.writeText(t.value);$('#cp').textContent='Copied!'}catch(x){}};
- $('#rs').onclick=()=>{if(confirm('Reset all saved progress?')){S={sc:0,st:0,best:0,n:0,ok:0,tp:{},sl:{},pr:{n:0,ok:0}};save();stats();report()}}}
+function record(tp,right,pts,extra){S.n++;const t=S.tp[tp]||(S.tp[tp]={n:0,ok:0});t.n++;if(right){S.ok++;t.ok++;S.st++;S.best=Math.max(S.best,S.st);S.sc+=pts+(S.st>=3?1:0)}else{S.st=0;S.sc+=extra||0}save();stats();report()}
+function report(){const e=$('#rep');if(!e)return;
+ const rows=Object.entries(S.tp).filter(([k,v])=>v.n);
+ e.innerHTML=`<details class="bg-white rounded-lg border border-slate-200 mt-4"><summary class="p-4 font-semibold text-indigo-950 flex items-center gap-2"><span class="chev text-indigo-500"></span>My progress summary</summary><div class="px-5 pb-5 space-y-2 text-sm">${rows.length?rows.map(([k,v])=>{const pc=Math.round(100*v.ok/v.n);return `<div><div class="flex justify-between"><span>${TOPICS[k]||k}</span><span>${v.ok}/${v.n} (${pc}%)</span></div><div class="h-2 bg-slate-200 rounded"><div class="h-2 rounded ${pc>=70?'bg-emerald-500':pc>=40?'bg-amber-500':'bg-red-500'}" style="width:${pc}%"></div></div></div>`}).join(''):'<p>Answer questions in Practise it to record your progress.</p>'}</div></details>`}
 
-/* ---------- checking answers ---------- */
-function parseExpr(str){let t=str.toLowerCase().replace(/[−–]/g,'-').replace(/\s+/g,'').replace(/\^/g,'**').replace(/√/g,'sqrt');
- t=t.replace(/sqrt/g,'S').replace(/sin/g,'I').replace(/cos/g,'C').replace(/tan/g,'T').replace(/ln/g,'L').replace(/exp/g,'P').replace(/e/g,'E');
- if(!t||!/^[0-9x+\-*\/().SICTLPE]*$/.test(t))return null;
- t=t.replace(/(\d|\)|x|E)(?=x|\(|S|I|C|T|L|P|E)/g,'$1*').replace(/\)(?=\d)/g,')*').replace(/[SICTLPE]/g,c=>({S:'Math.sqrt',I:'Math.sin',C:'Math.cos',T:'Math.tan',L:'Math.log',P:'Math.exp',E:'Math.E'})[c]);
+/* ---------- Answer checking ---------- */
+function prep(s){return s.toLowerCase().replace(/[−–]/g,'-').replace(/\s+/g,'').replace(/√/g,'sqrt').replace(/sqrt(\d+\.?\d*)/g,'sqrt($1)')}
+function parseExpr(str){let t=prep(str).replace(/\^/g,'**');
+ t=t.replace(/sqrt/g,'S').replace(/e/g,'E');if(!t||!/^[0-9x+\-*\/().SE]*$/.test(t))return null;
+ t=t.replace(/(\d|\)|x)(?=x|\(|S|E)/g,'$1*').replace(/\)(?=\d)/g,')*').replace(/S/g,'Math.sqrt').replace(/E/g,'Math.E');
  try{const f=new Function('x','"use strict";return ('+t+')');f(1.5);return f}catch(e){return null}}
-function evalConst(str){let t=str.toLowerCase().replace(/[−–]/g,'-').replace(/\s+/g,'').replace(/π/g,'pi').replace(/√/g,'sqrt');
- t=t.replace(/sqrt/g,'S').replace(/pi/g,'P');
- if(!t||!/^[0-9+\-*\/().SP]*$/.test(t))return null;
- t=t.replace(/(\d|\)|P)(?=P|S|\()/g,'$1*').replace(/\)(?=\d)/g,')*').replace(/P/g,'(Math.PI)').replace(/S/g,'Math.sqrt');
+function evalConst(str){let t=prep(str).replace(/sqrt/g,'S');if(!t||!/^[0-9+\-*\/().S]*$/.test(t))return null;
+ t=t.replace(/(\d|\))(?=S|\()/g,'$1*').replace(/\)(?=\d)/g,')*').replace(/S/g,'Math.sqrt');
  try{const v=new Function('"use strict";return ('+t+')')();return isFinite(v)?v:null}catch(e){return null}}
-function chkPart(Pt,str){
- if(Pt.cv!==undefined){const v=evalConst(str);if(v===null)return{ok:false,bad:true};const near=Math.abs(v-Pt.cv)<=(Pt.tol||.006)*Math.max(1,Math.abs(Pt.cv));
-  if(near&&Pt.exact&&!/pi|π|sqrt|√/i.test(str))return{ok:false,u:[v],alt:'This question asks for an <b>exact</b> answer, so leave $\\pi$ in your answer instead of writing a decimal. Use sqrt( ) or pi as needed.'};
-  return{ok:near,u:[v]}}
- if(Pt.fn){const f=parseExpr(str);if(!f)return{ok:false,bad:true};const same=g=>[.5,1.25,2.5,4,6.5].every(d=>{const x=Pt.lo+2*Math.abs(Pt.lo)+d,a=f(x),b=g(x);return isFinite(a)&&isFinite(b)&&Math.abs(a-b)<1e-6*(1+Math.abs(b))});
-  if(same(Pt.fn))return{ok:true};const al=(Pt.alts||[]).find(a=>same(a.fn));return{ok:false,alt:al?al.msg:null}}
- const u=nums(str);if(!u.length)return{ok:false,bad:true};const raw=u.slice(),a=Pt.ans.slice();if(Pt.un){u.sort((x,y)=>x-y);a.sort((x,y)=>x-y)}
- return{ok:u.length===a.length&&u.every((v,i)=>Math.abs(v-a[i])<(Pt.tol||.011)),u:Pt.un?u:raw}}
-const kind=q=>q.mc?'mc':q.dial?'dial':q.parts?'parts':q.fn?'expr':'num';
 
-/* ---------- practice engine ---------- */
-const PTS={t1:1,t2:2,t3:3,exam:1},CL={t1:'bg-sky-100 text-sky-900',t2:'bg-indigo-100 text-indigo-900',t3:'bg-indigo-900 text-white',exam:'bg-slate-800 text-white'},LBL={t1:'Fundamental',t2:'Intermediate',t3:'Exam mastery',exam:'Exam-style'};
-let filt='all',Q=null,sel=null,done=false,mk={auto:0,tot:0};
+function chkPart(Pt,str){
+ if(Pt.cv!==undefined){const v=evalConst(str);if(v===null)return{ok:false,bad:true};const near=Math.abs(v-Pt.cv)<=0.01;
+  if(near&&Pt.exact&&Math.abs(Pt.cv-Math.round(Pt.cv))>1e-9&&!/sqrt|√/i.test(str))return{ok:false,exactNeeded:true};
+  return{ok:near}}
+ if(Pt.fn){const f=parseExpr(str);if(!f)return{ok:false,bad:true};const same=g=>[0.37,1.7,4.3,6.1,-2.6].every(x=>{const a=f(x),b=g(x);return isFinite(a)&&isFinite(b)&&Math.abs(a-b)<1e-5});return{ok:same(Pt.fn)}}
+ const u=nums(str);if(!u.length)return{ok:false,bad:true};return{ok:u.every((v,i)=>Math.abs(v-Pt.ans[i])<0.02),u}}
+
+const PTS={t1:1,t2:2},CL={t1:'bg-sky-100 text-sky-900',t2:'bg-indigo-100 text-indigo-900',t3:'bg-indigo-900 text-white',exam:'bg-slate-800 text-white'},LBL={t1:'Fundamental',t2:'Intermediate',t3:'Exam mastery',exam:'Exam-style'};
+let filt='all',Q=null,done=false;
 $('#topicSel').innerHTML='<option value="all">All topics</option>'+Object.keys(TOPICS).map(k=>`<option value="${k}">${TOPICS[k]}</option>`).join('');
-function newQ(tier,gen){const tp=$('#topicSel').value;let q,t,gf,i=0;do{t=tier||(filt==='all'?pick(['t1','t2','t3','exam']):filt);gf=(gen&&i===0)?gen:pick(GEN[t]);q=gf();i++}while(!(gen&&i===1)&&tp!=='all'&&q.tp!==tp&&i<120);q._g=gf;Q=q;Q.tier=t;sel=null;done=false;draw()}
-function draw(){const b=$('#qBox'),K=kind(Q);let inp='';
- if(K==='mc')inp=`<div class="space-y-2" role="radiogroup" aria-label="Answer choices">${Q.mc.map((o,i)=>`<button class="opt w-full text-left border-2 border-slate-200 rounded-md p-3" role="radio" aria-checked="false" data-i="${i}">${o}</button>`).join('')}</div>`;
- else if(K==='dial')inp=`<p class="text-sm text-slate-600 mb-2">Click or tap the circle to place your point (it snaps to the marks, 15° apart). Or use the left arrow to turn anticlockwise and the right arrow to turn clockwise.</p><canvas id="dc" class="drag" tabindex="0"></canvas><p id="dro" class="text-sm mt-2" aria-live="polite"></p>`;
- else if(K==='parts')inp=Q.parts.map((p,i)=>`<div class="mb-3"><label for="pi${i}" class="block text-base" style="font-family:&#39;Atkinson Hyperlegible&#39;,system-ui,-apple-system,&#39;Segoe UI&#39;,Arial,sans-serif"><b>${p.lab}</b> ${p.txt} <span class="text-slate-500 text-sm">[${p.marks} mark${p.marks>1?'s':''}]</span></label><input id="pi${i}" autocomplete="off" class="mt-1 w-full sm:w-96 border-2 border-slate-300 rounded-md px-3 py-2" placeholder="${p.fn?'Type an expression, e.g. (5x+3)/(x+2)':'Type your answer'}"></div>`).join('');
- else inp=`<input id="inp" autocomplete="off" aria-label="Your answer" class="w-full sm:w-96 border-2 border-slate-300 rounded-md px-3 py-2 text-base" placeholder="${K==='expr'?'Type an expression, e.g. (5x+3)/(x+2)':'Type your answer here'}">${K==='expr'?'<p class="text-xs text-slate-500 mt-1">Use x, ^ for powers, brackets, e^( ), sin( ), cos( ), ln( ) and sqrt( ), for example (5x+3)/(x+2). Always put brackets round the top and bottom of a fraction. Any equivalent form is accepted.</p>':''}`;
- b.innerHTML=`<div class="flex items-center gap-2 mb-3"><span class="text-xs font-semibold rounded-full px-3 py-1 ${CL[Q.tier]}">${LBL[Q.tier]}${Q.tier==='exam'?'':' · '+PTS[Q.tier]+' pt'+(PTS[Q.tier]>1?'s':'')}</span><span class="text-xs text-slate-500">${TOPICS[Q.tp]||''}</span></div>
- <div class="text-lg leading-relaxed mb-4" style="font-family:&#39;Atkinson Hyperlegible&#39;,system-ui,-apple-system,&#39;Segoe UI&#39;,Arial,sans-serif">${Q.q}</div>${Q.qsec?`<canvas id="qs" class="mb-4 sq" role="img" aria-label="${(Q.qalt||'Diagram of the sector').replace(/"/g,'')}"></canvas>`:''}${Q.qgr?`<canvas id="qc" class="mb-4" role="img" aria-label="${(Q.qalt||'Graph for this question').replace(/"/g,'')}"></canvas>`:''}${inp}
- <div class="mt-4 flex flex-wrap gap-2"><button id="sub" class="rounded-md bg-indigo-900 text-white px-5 py-2 text-sm">Check my answer</button><button id="hint" class="rounded-md border border-slate-300 px-5 py-2 text-sm">Give me a hint</button><button id="skip" class="rounded-md border border-slate-300 px-5 py-2 text-sm">Different question, same level</button><span id="afterbtns" class="hidden contents"><button id="alike" class="rounded-md bg-emerald-700 text-white px-5 py-2 text-sm">Another like this one</button><button id="alvl" class="rounded-md bg-emerald-800 text-white px-5 py-2 text-sm">Another at this level</button><button id="nxt" class="rounded-md border border-emerald-700 text-emerald-800 px-5 py-2 text-sm">Next question</button></span></div><div id="hb" class="mt-3" aria-live="polite"></div><div id="fb" class="mt-4" aria-live="polite"></div>`;
- ty(b);if(Q.qsec)sector($('#qs'),Q.qsec);if(Q.qgr){const g=Q.qgr;plot($('#qc'),g.c,{fit:fit(g.c.map(k=>[k.f,g.x0,g.x1]),g.pts),pts:g.pts,segs:g.segs})}$('#sub').onclick=mark;$('#skip').onclick=()=>newQ(Q.tier);$('#alike').onclick=()=>newQ(Q.tier,Q._g);$('#alvl').onclick=()=>newQ(Q.tier);$('#nxt').onclick=()=>newQ();
- $('#hint').onclick=()=>{$('#hb').innerHTML=`<div class="rounded-md bg-amber-50 border border-amber-200 p-3 text-sm leading-relaxed"><b>Hint:</b> ${Q.steps[0]}</div>`;ty($('#hb'))};
- $$('#qBox .opt').forEach(o=>o.onclick=()=>{if(done)return;sel=+o.dataset.i;$$('#qBox .opt').forEach(x=>{x.classList.remove('sel');x.setAttribute('aria-checked','false')});o.classList.add('sel');o.setAttribute('aria-checked','true')});
- $$('#qBox input').forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter')mark()}));if(K==='dial')dialInit()}
-function mark(){if(done)return;const K=kind(Q),warn=t=>{$('#fb').innerHTML=`<p class="text-sm text-amber-700">${t}</p>`};let right=false,earned=0,ms='',slip=null,slips=[];mk={auto:0,tot:0};
- if(K==='mc'){if(sel===null)return warn('Pick an answer first.');right=sel===Q.ci;if(!right&&Q.mcwhy)slip=Q.mcwhy[sel]||null;$$('#qBox .opt').forEach((o,i)=>{if(i===Q.ci)o.classList.add('ok');else if(i===sel)o.classList.add('bad')})}
- else if(K==='dial'){if(Q.dot===null||Q.dot===undefined)return warn('Click the circle to place your point first.');right=Q.dot===Q.dial.k;if(!right&&Q.dial.alts){const al=Q.dial.alts.find(a=>a.k===Q.dot);if(al)slip=al.msg}dialDraw(true)}
- else if(K==='parts'){const rows=[];Q.parts.forEach((p,i)=>{p.r=chkPart(p,$('#pi'+i).value);if(!p.r.ok){const m=p.r.alt||(p.dg&&p.r.u?p.dg(p.r.u):null);if(m)slips.push(p.lab+' '+m)}const inp=$('#pi'+i);inp.classList.add(p.r.ok?'border-emerald-500':'border-red-500');
-   p.ms.forEach(m=>{mk.tot++;let got=null;if(m.auto){got=m.idx!==undefined?!!(p.r.u&&p.r.u[m.idx]!==undefined&&Math.abs(p.r.u[m.idx]-p.ans[m.idx])<.011):p.r.ok;if(got)mk.auto++}
-   rows.push(`<li class="flex gap-2 items-start"><span class="font-semibold w-8 shrink-0">${m.c}</span><span class="flex-1">${p.lab} ${m.d}</span>${m.auto?`<span class="${got?'text-emerald-700':'text-red-700'}">${got?'✓ awarded':'✗ not awarded'}</span>`:`<label class="text-xs whitespace-nowrap"><input type="checkbox" class="ms"> I did this</label>`}</li>`)})});
-  right=Q.parts.every(p=>p.r.ok);earned=mk.auto;ms=`<div class="rounded-md border border-slate-300 p-3 mb-3"><div class="font-semibold mb-2">Mark scheme: <span id="mtot"></span></div><ul class="space-y-2 text-sm">${rows.join('')}</ul><p class="text-xs text-slate-500 mt-2">Answer marks (B, A) are checked for you. Tick the method marks (M) you earned in your own working.</p></div>`}
- else{const r=chkPart(Q,$('#inp').value);if(r.bad)return warn(K==='expr'?'I could not read that. Use x, ^, brackets, sin( ), cos( ), ln( ), e^( ) and sqrt( ), for example (5x+3)/(x+2).':'Type an answer first.');right=r.ok;if(!right)slip=r.alt||(Q.diag&&r.u?Q.diag(r.u):null);$('#inp').classList.add(right?'border-emerald-500':'border-red-500')}
- done=true;record(Q.tp||'mix',right,K==='parts'?earned:PTS[Q.tier],K==='parts'?earned:0,slip||slips[0]||null);
- $('#sub').classList.add('hidden');$('#hint').classList.add('hidden');$('#hb').innerHTML='';$('#skip').classList.add('hidden');$('#afterbtns').classList.remove('hidden');
- const at=K==='parts'?Q.parts.map(p=>`${p.lab} $${p.at}$`).join(' &nbsp;&nbsp; '):(Q.at.includes('$')?Q.at:'$'+Q.at+'$');
- const sh=right?'':(slip?[slip]:slips).map(m=>`<div class="rounded-md bg-amber-50 border border-amber-300 p-3 mb-3 text-sm leading-relaxed"><b>A common slip:</b> ${m}</div>`).join('');
- $('#fb').innerHTML=`<div class="rounded-md p-3 mb-3 ${right?'bg-emerald-50 border border-emerald-300 text-emerald-900':'bg-red-50 border border-red-300 text-red-900'}"><b>${right?(K==='parts'?'Every answer correct. Well done.':'Correct. Well done.')+(S.st>=3?' Streak bonus: +1 point.':''):'Not quite.'}</b>${right?'':' The correct answer is '+at+'. Read through the steps below to see how to get there.'}</div>${sh}${ms}
- <div class="rounded-md bg-slate-50 border border-slate-200 p-3"><div class="font-semibold text-indigo-950 mb-2">How to work it out</div><ol class="list-decimal ml-5 space-y-2 leading-relaxed">${Q.steps.map(x=>'<li>'+x+'</li>').join('')}</ol></div>
- ${Q.sd?`<button id="gb" class="mt-3 rounded-md border border-slate-300 px-4 py-2 text-sm">Show this as a diagram</button><canvas id="gc" class="hidden mt-3 sq" role="img" aria-label="Diagram of the sector in the question"></canvas>`:''}`;
- ty($('#fb'));
- if(K==='parts'){const upd=()=>{$('#mtot').textContent=(mk.auto+$$('#fb .ms:checked').length)+' / '+mk.tot+' marks'};upd();$$('#fb .ms').forEach(c=>c.onchange=upd)}
- const gb=$('#gb');if(gb)gb.onclick=()=>{const c=$('#gc');c.classList.toggle('hidden');const open=!c.classList.contains('hidden');gb.textContent=open?'Hide the diagram':'Show this as a diagram';if(open)sector(c,Q.sd)}}
+
+function newQ(tier){const tp=$('#topicSel').value,ok=tp==='all'?['t1','t2','t3','exam']:tiersFor(tp),base=tier||filt;
+ if(base!=='all'&&!ok.includes(base)){$('#qBox').innerHTML=`<p class="text-base">There are no ${LBL[base]} questions on this topic yet. Choose another level or topic.</p>`;return}
+ let q,t,i=0;do{t=base==='all'?pick(ok):base;q=pick(GEN[t])();i++}while(tp!=='all'&&q.tp!==tp&&i<120);
+ Q=q;Q.tier=t;done=false;draw()}
+
+function draw(){const b=$('#qBox');let inp='';
+ if(Q.parts)inp=Q.parts.map((p,i)=>`<div class="mb-3"><label for="pi${i}" class="block text-base"><b>${p.lab}</b> ${p.txt} <span class="text-slate-500 text-sm">[${p.marks} mark${p.marks>1?'s':''}]</span></label><input id="pi${i}" autocomplete="off" class="mt-1 w-full sm:w-96 border-2 border-slate-300 rounded-md px-3 py-2" placeholder="Type your answer"></div>`).join('');
+ else inp=`<input id="inp" autocomplete="off" aria-label="Your answer" class="w-full sm:w-96 border-2 border-slate-300 rounded-md px-3 py-2 text-base" placeholder="Type your answer here">`;
+ b.innerHTML=`<div class="flex items-center gap-2 mb-3"><span class="text-xs font-semibold rounded-full px-3 py-1 ${CL[Q.tier]}">${LBL[Q.tier]}</span><span class="text-xs text-slate-500">${TOPICS[Q.tp]||''}</span></div>
+ <div class="text-lg leading-relaxed mb-4">${Q.q}</div>${Q.qgr?`<canvas id="qc" class="mb-4"></canvas>`:''}${inp}
+ <div class="mt-4 flex flex-wrap gap-2"><button id="sub" class="rounded-md bg-indigo-900 text-white px-5 py-2 text-sm">Check my answer</button><button id="hint" class="rounded-md border border-slate-300 px-5 py-2 text-sm">Give me a hint</button><button id="skip" class="rounded-md border border-slate-300 px-5 py-2 text-sm">Skip</button><span id="afterbtns" class="hidden contents"><button id="nxt" class="rounded-md bg-emerald-800 text-white px-5 py-2 text-sm">Next question</button></span></div><div id="hb" class="mt-3"></div><div id="fb" class="mt-4"></div>`;
+ ty(b);if(Q.qgr){const g=Q.qgr;plot($('#qc'),g.c,{fit:fit(g.c.map(k=>[k.f,g.x0,g.x1]),g.pts),pts:g.pts,segs:g.segs})}
+ $('#sub').onclick=mark;$('#skip').onclick=()=>newQ(Q.tier);$('#nxt').onclick=()=>newQ();
+ $('#hint').onclick=()=>{$('#hb').innerHTML=`<div class="rounded-md bg-amber-50 border border-amber-200 p-3 text-sm"><b>Hint:</b> ${Q.hint||Q.steps[0]}</div>`;ty($('#hb'))};
+ $$('#qBox input').forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter')mark()}))}
+
+function mark(){if(done)return;let right=false,earn=0,need=false;
+ if(Q.parts){Q.parts.forEach((p,i)=>{p.r=chkPart(p,$('#pi'+i).value);$('#pi'+i).classList.add(p.r.ok?'border-emerald-500':'border-red-500');if(p.r.ok)earn+=p.marks;if(p.r.exactNeeded)need=true});right=Q.parts.every(p=>p.r.ok)}
+ else{const r=chkPart(Q,$('#inp').value);right=r.ok;$('#inp').classList.add(right?'border-emerald-500':'border-red-500')}
+ done=true;const tot=Q.parts?Q.parts.reduce((s,p)=>s+p.marks,0):PTS[Q.tier];record(Q.tp||'mix',right,tot,earn);
+ $('#sub').classList.add('hidden');$('#hint').classList.add('hidden');$('#skip').classList.add('hidden');$('#afterbtns').classList.remove('hidden');
+ const ans=Q.parts?Q.parts.map(p=>`${p.lab} $${p.at}$`).join(' &nbsp; '):`$${Q.at||''}$`;
+ const sch=Q.parts?`<div class="rounded-md bg-slate-50 border border-slate-200 p-3 mb-3"><div class="font-semibold text-indigo-950 mb-1">Mark scheme (you scored ${earn} of ${tot})</div>${Q.parts.map(p=>`<div class="mt-1"><b>${p.lab}</b> ${p.ms.map(m=>`<span class="font-semibold">${m.c}</span> ${m.d}`).join(' · ')}</div>`).join('')}</div>`:'';
+ $('#fb').innerHTML=`<div class="rounded-md p-3 mb-3 ${right?'bg-emerald-50 border border-emerald-300 text-emerald-900':'bg-red-50 border border-red-300 text-red-900'}"><b>${right?'Correct! Well done.':'Not quite.'}</b> Answer: ${ans}${need?'<br>The question asks for an <b>exact</b> value, so leave it as a root (like 5√3), not a rounded decimal.':''}</div>${sch}<div class="rounded-md bg-slate-50 border border-slate-200 p-3"><div class="font-semibold text-indigo-950 mb-2">Full working</div><ol class="list-decimal ml-5 space-y-1">${Q.steps.map(x=>'<li>'+x+'</li>').join('')}</ol></div>`;
+ ty($('#fb'))}
+
 $$('.tier').forEach(b=>b.onclick=()=>{filt=b.dataset.tier;$$('.tier').forEach(x=>x.classList.toggle('on',x===b));newQ()});
 $('#topicSel').onchange=()=>newQ();
 
-/* ---------- spot the mistake ---------- */
+/* ---------- Spot the mistake engine ---------- */
 let SP=null,spDone=false;
 function newSpot(){SP=pick(SPOT)();spDone=false;spDraw()}
 function spDraw(){const b=$('#spBox');
- b.innerHTML=`<div class="text-lg leading-relaxed mb-3" style="font-family:&#39;Atkinson Hyperlegible&#39;,system-ui,-apple-system,&#39;Segoe UI&#39;,Arial,sans-serif">${SP.q}</div><p class="text-sm text-slate-600 mb-2">Click the <b>first line that contains a mistake</b>.</p><div class="space-y-2">${SP.lines.map((l,i)=>`<button class="opt w-full text-left border-2 border-slate-200 rounded-md p-3" data-i="${i}"><span class="font-semibold text-slate-500 mr-2">Line ${i+1}:</span>${l}</button>`).join('')}</div><div id="spfb" class="mt-4" aria-live="polite"></div><button id="spn" class="hidden mt-3 rounded-md bg-emerald-700 text-white px-5 py-2 text-sm">Next one</button>`;ty(b);
+ b.innerHTML=`<div class="text-lg leading-relaxed mb-3">${SP.q}</div><p class="text-sm text-slate-600 mb-2">Click the <b>first line that contains a mistake</b>.</p><div class="space-y-2">${SP.lines.map((l,i)=>`<button class="opt w-full text-left border-2 border-slate-200 rounded-md p-3" data-i="${i}"><span class="font-semibold text-slate-500 mr-2">Line ${i+1}:</span>${l}</button>`).join('')}</div><div id="spfb" class="mt-4"></div><button id="spn" class="hidden mt-3 rounded-md bg-emerald-700 text-white px-5 py-2 text-sm">Try another</button>`;ty(b);
  $$('#spBox .opt').forEach(o=>o.onclick=()=>{if(spDone)return;spDone=true;const i=+o.dataset.i,ok=i===SP.bad;$$('#spBox .opt').forEach((x,j)=>{if(j===SP.bad)x.classList.add('ok');else if(j===i)x.classList.add('bad')});record(SP.tp,ok,2);
-  $('#spfb').innerHTML=`<div class="rounded-md p-3 mb-3 ${ok?'bg-emerald-50 border border-emerald-300 text-emerald-900':'bg-red-50 border border-red-300 text-red-900'}"><b>${ok?'Spotted it!':'Not that line.'}</b> The first mistake is on line ${SP.bad+1}.</div><div class="rounded-md bg-slate-50 border border-slate-200 p-3 space-y-2 leading-relaxed"><p><b>Why it is wrong:</b> ${SP.why}</p><p><b>The correct working:</b> ${SP.fix}</p></div>`;ty($('#spfb'));$('#spn').classList.remove('hidden')});
+  $('#spfb').innerHTML=`<div class="rounded-md p-3 mb-3 ${ok?'bg-emerald-50 border border-emerald-300 text-emerald-900':'bg-red-50 border border-red-300 text-red-900'}"><b>${ok?'Spot on!':'Not that line.'}</b> Line ${SP.bad+1} is where the mistake happens.</div><div class="rounded-md bg-slate-50 border border-slate-200 p-3 space-y-2"><p><b>Why it is wrong:</b> ${SP.why}</p><p><b>Correct working:</b> ${SP.fix}</p></div>`;ty($('#spfb'));$('#spn').classList.remove('hidden')});
  $('#spn').onclick=newSpot}
 
-/* ---------- tabs, accessibility, init ---------- */
+/* ---------- Tabs and preferences ---------- */
 const TABS=['theory','examples','practice','spot'];
-function goTab(n){$$('.tab').forEach(x=>{const o=x.dataset.tab===n;x.classList.toggle('on',o);x.classList.toggle('bg-slate-100',!o);x.setAttribute('aria-selected',String(o))});TABS.forEach(id=>$('#'+id).classList.toggle('hidden',id!==n));if(n==='theory')drawAll($('#cards'));window.scrollTo(0,0)}
-$$('.tab').forEach(t=>{t.setAttribute('role','tab');t.onclick=()=>goTab(t.dataset.tab)});
+function goTab(n){$$('.tab').forEach(x=>{const o=x.dataset.tab===n;x.classList.toggle('on',o);x.classList.toggle('bg-slate-100',!o)});TABS.forEach(id=>$('#'+id).classList.toggle('hidden',id!==n));if(n==='theory')drawAll($('#cards'));window.scrollTo(0,0)}
+$$('.tab').forEach(t=>{t.onclick=()=>goTab(t.dataset.tab)});
+
 const PK='fm9ma0-prefs-v2';let PR={};try{PR=JSON.parse(localStorage.getItem(PK)||'{}')}catch(e){}
-function prefs(){document.documentElement.style.fontSize=PR.big?'125%':'';document.body.classList.toggle('dark',!!PR.dark);document.body.classList.toggle('hc',!!PR.hc&&!PR.dark);$('#tdk').setAttribute('aria-pressed',String(!!PR.dark));$('#tdk').textContent=PR.dark?'Light mode':'Dark mode';$('#tsz').setAttribute('aria-pressed',String(!!PR.big));$('#tsz').textContent=PR.big?'Smaller text':'Larger text';$('#thc').setAttribute('aria-pressed',String(!!PR.hc));$('#thc').textContent=PR.hc?'Standard contrast':'High contrast';try{localStorage.setItem(PK,JSON.stringify(PR))}catch(e){}}
+function prefs(){document.documentElement.style.fontSize=PR.big?'125%':'';document.body.classList.toggle('dark',!!PR.dark);document.body.classList.toggle('hc',!!PR.hc&&!PR.dark);$('#tdk').textContent=PR.dark?'Light mode':'Dark mode';$('#tsz').textContent=PR.big?'Smaller text':'Larger text';$('#thc').textContent=PR.hc?'Standard contrast':'High contrast';try{localStorage.setItem(PK,JSON.stringify(PR))}catch(e){}}
 $('#tsz').onclick=()=>{PR.big=!PR.big;prefs()};$('#thc').onclick=()=>{PR.hc=!PR.hc;prefs()};$('#tdk').onclick=()=>{PR.dark=!PR.dark;prefs()};
-window.addEventListener('load',()=>{if(PR.dark===undefined)PR.dark=false;ty(document.body);prefs();newQ();newSpot();stats();report()});
+
+window.addEventListener('load',()=>{prefs();ty(document.body);newQ();newSpot();stats();report()});
 window.addEventListener('resize',()=>drawAll($('#cards')));
 </script>
 </body>
